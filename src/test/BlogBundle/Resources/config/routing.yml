@@ -1,0 +1,5 @@
+# src/Sdz/BlogBundle/Resources/config/routing.yml
+ 
+sdzblog_voir:
+    path:     /blog/article/{id}
+    defaults: { _controller: testBlogBundle:Blog:voir }
