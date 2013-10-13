@@ -1,0 +1,22 @@
+{# src/test/BlogBundle/Resources/views/Blog/supprimer.html.twig #}
+ 
+{% extends "testBlogBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Lecture d'un article - {{ parent() }}
+{% endblock %}
+ 
+{% block testblog_body %}
+ 
+  <h2>{{ article.titre }}</h2>
+  <i>Par {{ article.auteur }}, le {{ article.date|date('d/m/Y') }}</i>
+ 
+  <div class="well">
+    {{ article.contenu }}
+  </div>
+  
+  <p>
+	Voulez-vous vraiment supprimer {{ article.titre }} ?
+  </p>
+ 
+{% endblock %}

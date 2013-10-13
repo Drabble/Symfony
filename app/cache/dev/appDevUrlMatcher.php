@@ -133,9 +133,37 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // sdzblog_voir
-        if (0 === strpos($pathinfo, '/blog/article') && preg_match('#^/blog/article/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sdzblog_voir')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::voirAction',));
+        // testblog_index
+        if ($pathinfo === '/blog') {
+            return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::indexAction',  '_route' => 'testblog_index',);
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
+            // testblog_accueil
+            if ($pathinfo === '/accueil') {
+                return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::indexAction',  '_route' => 'testblog_accueil',);
+            }
+
+            // testblog_voir
+            if (0 === strpos($pathinfo, '/article') && preg_match('#^/article/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_voir')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::voirAction',));
+            }
+
+            // testblog_ajouter
+            if ($pathinfo === '/ajouter') {
+                return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::ajouterAction',  '_route' => 'testblog_ajouter',);
+            }
+
+        }
+
+        // testblog_modifier
+        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_modifier')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::modifierAction',));
+        }
+
+        // testblog_supprimer
+        if (0 === strpos($pathinfo, '/supprimer') && preg_match('#^/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_supprimer')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::supprimerAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

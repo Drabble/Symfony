@@ -1,5 +1,31 @@
-# src/Sdz/BlogBundle/Resources/config/routing.yml
+# src/test/BlogBundle/Resources/config/routing.yml
  
-sdzblog_voir:
-    path:     /blog/article/{id}
-    defaults: { _controller: testBlogBundle:Blog:voir }
+testblog_index:
+    path:      /blog
+    defaults:  { _controller: testBlogBundle:Blog:index}
+ 
+testblog_accueil:
+    path:      /accueil
+    defaults:  { _controller: testBlogBundle:Blog:index}
+ 
+testblog_voir:
+    path:      /article/{id}
+    defaults:  { _controller: testBlogBundle:Blog:voir }
+    requirements:
+        id:  \d+
+ 
+testblog_ajouter:
+    path:      /ajouter
+    defaults:  { _controller: testBlogBundle:Blog:ajouter }
+ 
+testblog_modifier:
+    path:      /modifier/{id}
+    defaults:  { _controller: testBlogBundle:Blog:modifier }
+    requirements:
+        id:  \d+
+ 
+testblog_supprimer:
+    path:      /supprimer/{id}
+    defaults:  { _controller: testBlogBundle:Blog:supprimer }
+    requirements:
+        id:  \d+
