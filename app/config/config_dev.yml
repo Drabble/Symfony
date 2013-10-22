@@ -26,6 +26,9 @@ monolog:
 
 assetic:
     use_controller: true
+    bundles: [ PortfolioPortfolioBundle ]
+    filters:
+        cssrewrite: ~
 
 #swiftmailer:
 #    delivery_address: me@example.com

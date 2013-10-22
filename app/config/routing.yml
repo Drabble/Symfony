@@ -1,4 +1,7 @@
 test_blog:
     resource: "@testBlogBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /test_blog
 
+PortfolioPortfolioBundle:
+    resource: "@PortfolioPortfolioBundle/Resources/config/routing.yml"
+    prefix:   /

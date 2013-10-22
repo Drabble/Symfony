@@ -25,6 +25,85 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $allow = array();
         $pathinfo = rawurldecode($pathinfo);
 
+        if (0 === strpos($pathinfo, '/js/49e5bda')) {
+            // _assetic_49e5bda
+            if ($pathinfo === '/js/49e5bda.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '49e5bda',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_49e5bda',);
+            }
+
+            if (0 === strpos($pathinfo, '/js/49e5bda_part_')) {
+                // _assetic_49e5bda_0
+                if ($pathinfo === '/js/49e5bda_part_1_jquery.ui.widget_1.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '49e5bda',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_49e5bda_0',);
+                }
+
+                if (0 === strpos($pathinfo, '/js/49e5bda_part_2_')) {
+                    // _assetic_49e5bda_1
+                    if ($pathinfo === '/js/49e5bda_part_2_bootstrap.min_1.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '49e5bda',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_49e5bda_1',);
+                    }
+
+                    if (0 === strpos($pathinfo, '/js/49e5bda_part_2_jquery.')) {
+                        // _assetic_49e5bda_2
+                        if ($pathinfo === '/js/49e5bda_part_2_jquery.iframe-transport_2.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => '49e5bda',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_49e5bda_2',);
+                        }
+
+                        // _assetic_49e5bda_3
+                        if ($pathinfo === '/js/49e5bda_part_2_jquery.slides.min_3.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => '49e5bda',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_49e5bda_3',);
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/css/9057ca4')) {
+            // _assetic_9057ca4
+            if ($pathinfo === '/css/9057ca4.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '9057ca4',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_9057ca4',);
+            }
+
+            if (0 === strpos($pathinfo, '/css/9057ca4_part_1_')) {
+                if (0 === strpos($pathinfo, '/css/9057ca4_part_1_bootstrap')) {
+                    if (0 === strpos($pathinfo, '/css/9057ca4_part_1_bootstrap-responsive')) {
+                        // _assetic_9057ca4_0
+                        if ($pathinfo === '/css/9057ca4_part_1_bootstrap-responsive_1.css') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => '9057ca4',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_9057ca4_0',);
+                        }
+
+                        // _assetic_9057ca4_1
+                        if ($pathinfo === '/css/9057ca4_part_1_bootstrap-responsive.min_2.css') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => '9057ca4',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_9057ca4_1',);
+                        }
+
+                    }
+
+                    // _assetic_9057ca4_2
+                    if ($pathinfo === '/css/9057ca4_part_1_bootstrap_3.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '9057ca4',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_9057ca4_2',);
+                    }
+
+                    // _assetic_9057ca4_3
+                    if ($pathinfo === '/css/9057ca4_part_1_bootstrap.min_4.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '9057ca4',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_9057ca4_3',);
+                    }
+
+                }
+
+                // _assetic_9057ca4_4
+                if ($pathinfo === '/css/9057ca4_part_1_design_5.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '9057ca4',  'pos' => 4,  '_format' => 'css',  '_route' => '_assetic_9057ca4_4',);
+                }
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
@@ -133,37 +212,49 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // testblog_index
-        if ($pathinfo === '/blog') {
-            return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::indexAction',  '_route' => 'testblog_index',);
-        }
-
-        if (0 === strpos($pathinfo, '/a')) {
-            // testblog_accueil
-            if ($pathinfo === '/accueil') {
-                return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::indexAction',  '_route' => 'testblog_accueil',);
+        if (0 === strpos($pathinfo, '/test_blog')) {
+            // testblog_index
+            if ($pathinfo === '/test_blog/blog') {
+                return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::indexAction',  '_route' => 'testblog_index',);
             }
 
-            // testblog_voir
-            if (0 === strpos($pathinfo, '/article') && preg_match('#^/article/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_voir')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::voirAction',));
+            if (0 === strpos($pathinfo, '/test_blog/a')) {
+                // testblog_accueil
+                if ($pathinfo === '/test_blog/accueil') {
+                    return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::indexAction',  '_route' => 'testblog_accueil',);
+                }
+
+                // testblog_voir
+                if (0 === strpos($pathinfo, '/test_blog/article') && preg_match('#^/test_blog/article/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_voir')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::voirAction',));
+                }
+
+                // testblog_ajouter
+                if ($pathinfo === '/test_blog/ajouter') {
+                    return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::ajouterAction',  '_route' => 'testblog_ajouter',);
+                }
+
             }
 
-            // testblog_ajouter
-            if ($pathinfo === '/ajouter') {
-                return array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::ajouterAction',  '_route' => 'testblog_ajouter',);
+            // testblog_modifier
+            if (0 === strpos($pathinfo, '/test_blog/modifier') && preg_match('#^/test_blog/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_modifier')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::modifierAction',));
+            }
+
+            // testblog_supprimer
+            if (0 === strpos($pathinfo, '/test_blog/supprimer') && preg_match('#^/test_blog/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_supprimer')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::supprimerAction',));
             }
 
         }
 
-        // testblog_modifier
-        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_modifier')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::modifierAction',));
-        }
+        // Portfolio
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'Portfolio');
+            }
 
-        // testblog_supprimer
-        if (0 === strpos($pathinfo, '/supprimer') && preg_match('#^/supprimer/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'testblog_supprimer')), array (  '_controller' => 'test\\BlogBundle\\Controller\\BlogController::supprimerAction',));
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::indexAction',  '_route' => 'Portfolio',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
