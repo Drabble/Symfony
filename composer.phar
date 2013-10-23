@@ -1,0 +1,4 @@
+"require": {
+    "php": ">=5.3.3",
+    "doctrine/doctrine-fixtures-bundle": "dev-master"
+    }
