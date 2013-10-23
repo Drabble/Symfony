@@ -23,31 +23,35 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
 \t\t<meta name=\"description\" content=\"Portfolio\" />
 \t\t<meta name=\"author\" content=\"Antoine Drabble\" />
 \t\t<meta name=\"viewport\" content=\"width=device-width\" />
-\t\t<script src=\"//code.jquery.com/jquery-latest.min.js\" type=\"text/javascript\"></script>
-\t\t<script type=\"text/javascript\" src=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/bootstrap.min.js"), "html", null, true);
-        echo "\"></script>
-\t\t<script type=\"text/javascript\" src=\"";
-        // line 10
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/jquery.slides.min.js"), "html", null, true);
-        echo "\"></script> 
-\t\t<script type=\"text/javascript\" src=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/script.js"), "html", null, true);
-        echo "\"></script> 
 \t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 12
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/css/bootstrap.min.css"), "html", null, true);
         echo "\" />
 \t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 13
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/css/bootstrap-responsive.min.css"), "html", null, true);
         echo "\" />
 \t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 14
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/font-awesome/css/font-awesome.min.css"), "html", null, true);
+        echo "\" />
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/css/design.css"), "html", null, true);
         echo "\" />
+\t\t<script src=\"//code.jquery.com/jquery-latest.min.js\" type=\"text/javascript\"></script>
+\t\t<script type=\"text/javascript\" src=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+\t\t<script type=\"text/javascript\" src=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/jquery.slides.min.js"), "html", null, true);
+        echo "\"></script> 
+\t\t<script type=\"text/javascript\" src=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/portfolio.js"), "html", null, true);
+        echo "\"></script> 
 \t</head>
 \t<body>
 \t\t  <div class=\"container\">
@@ -83,22 +87,22 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
       <div class=\"span12\">
         <div id=\"slides\">
           <img class=\"slider_img\" src=\"";
-        // line 49
+        // line 50
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/Penguins.jpg"), "html", null, true);
         echo "\" alt=
           \"Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/\" />
           <img class=\"slider_img\" src=\"";
-        // line 51
+        // line 52
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/Desert.jpg"), "html", null, true);
         echo "\" alt=
           \"Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/\" />
            <img class=\"slider_img\" src=\"";
-        // line 53
+        // line 54
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/JellyFish.jpg"), "html", null, true);
         echo "\" alt=
           \"Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/\" />
            <img class=\"slider_img\" src=\"";
-        // line 55
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/a4.jpg"), "html", null, true);
         echo "\" alt=
           \"Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/\" />
@@ -109,7 +113,7 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
     </div><!--<li class=\"span3\">      
         <div class=\"thumbnail\">       
         <a href=\"detail.html\"><img id=\"picture\" src=\"";
-        // line 63
+        // line 64
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("pictures/Desert.jpg"), "html", null, true);
         echo "\" alt=\"thumbnail\" /></a> 
         <div class=\"category\"><i class=\"icon-tag icon-white\"></i> <a href=\"#\">Photoshop</a>, <a href=\"#\">Typography</a></div>                 
@@ -180,51 +184,6 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
       </div>
     </div>
   </div>
-  <script type='text/javascript'>
-                \$(function (){\t\t\t
-\t\$(\"[rel='tooltip']\").tooltip();\t\t
-\t\$('#slides').slidesjs({\t\t\t\t
-\t\twidth: 940,\t\t\t\t
-\t\theight: 400,\t\t\t\t
-\t\tnavigation: false\t\t\t
-\t});\t\t\t\t\t\t\t
-\t\$(\".slider_img\").each(function( i ) {\t
-\t\tvar height = \$(this).height();\t\t\t
-\t\tvar diff =  (parseInt(height) / 4);\t\t
-\t\tif (height>400){\t\t\t\t\t
-\t\t\t\$(this).css('top', ('-' + diff + 'px'));\t
-\t\t}\t
-\t});\t\t\t
-\t\$('#home').click(function() {\t
-\t\t\$(\"#page_studies, #page_contact, #page_projects\").css('display', 'none');
-\t\t\$(\"#page_home\").css('display', 'block');\t\t\t\t\t
-\t\t\$(\"#projects, #contact, #studies\").css('border-bottom', 'none' );\t
-\t\t\$(\"#home\").css('border-bottom', '1px solid #6E6E6E');
-\t\treturn false;
-\t});\t\t
-\t\$('#studies').click(function() {\t\t\t\t
-\t\t\$(\"#page_home, #page_projects, #page_contact\").css('display', 'none');\t
-\t\t\$(\"#page_studies\").css('display', 'block');\t\t\t\t
-\t\t\$(\"#projects, #home, #contact\").css('border-bottom', 'none' );\t\t\t
-\t\t\$(\"#studies\").css('border-bottom', '1px solid #6E6E6E');\t\t
-\t\treturn false;\t\t
-\t});\t\t
-\t\$('#projects').click(function() {\t\t\t\t
-\t\t\$(\"#page_studies, #page_contact, #page_home\").css('display', 'none');\t
-\t\t\$(\"#page_projects\").css('display', 'block');\t\t\t\t
-\t\t\$(\"#studies, #contact, #home\").css('border-bottom', 'none' );\t\t
-\t\t\$(\"#projects\").css('border-bottom', '1px solid #6E6E6E');\t
-\t\treturn false;
-\t});\t\t
-\t\$('#contact').click(function() {
-\t\t\$(\"#page_home, #page_projects, #page_studies\").css('display', 'none');\t
-\t\t\$(\"#page_contact\").css('display', 'block');\t\t\t\t\t
-\t\t\$(\"#projects, #studies, #home\").css('border-bottom', 'none' );\t
-\t\t\$(\"#contact\").css('border-bottom', '1px solid #6E6E6E');\t
-\t\treturn false;
-\t});\t\t\t
-}); \t\t
-  </script>
 
 \t</body>
 </html>";
@@ -242,6 +201,6 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
 
     public function getDebugInfo()
     {
-        return array (  113 => 63,  102 => 55,  97 => 53,  92 => 51,  87 => 49,  49 => 14,  45 => 13,  41 => 12,  37 => 11,  33 => 10,  29 => 9,  19 => 1,);
+        return array (  117 => 64,  106 => 56,  101 => 54,  96 => 52,  91 => 50,  53 => 15,  49 => 14,  45 => 13,  40 => 11,  36 => 10,  32 => 9,  28 => 8,  19 => 1,);
     }
 }
