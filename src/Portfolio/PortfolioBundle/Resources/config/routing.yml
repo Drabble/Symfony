@@ -1,3 +1,15 @@
 Portfolio:
     path:     /
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:index }
+AddArticle:
+    path:     /addArticle
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:addArticle }
+Articles:
+    path:     /articles
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:articles }
+Studies:
+    path:     /studies
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:studies }
+Contact:
+    path:     /contact
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:contact }

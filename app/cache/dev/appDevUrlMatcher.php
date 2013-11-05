@@ -178,6 +178,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::indexAction',  '_route' => 'Portfolio',);
         }
 
+        if (0 === strpos($pathinfo, '/a')) {
+            // AddArticle
+            if ($pathinfo === '/addArticle') {
+                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::addArticleAction',  '_route' => 'AddArticle',);
+            }
+
+            // Articles
+            if ($pathinfo === '/articles') {
+                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::articlesAction',  '_route' => 'Articles',);
+            }
+
+        }
+
+        // Studies
+        if ($pathinfo === '/studies') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::studiesAction',  '_route' => 'Studies',);
+        }
+
+        // Contact
+        if ($pathinfo === '/contact') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::contactAction',  '_route' => 'Contact',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

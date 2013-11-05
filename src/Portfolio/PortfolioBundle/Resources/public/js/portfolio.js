@@ -12,7 +12,7 @@ $(function (){
 			$(this).css('top', ('-' + diff + 'px'));	
 		}	
 	});			
-	$('#home').click(function() {	
+	/*$('#home').click(function() {	
 		$("#page_studies, #page_contact, #page_projects").css('display', 'none');
 		$("#page_home").css('display', 'block');					
 		$("#projects, #contact, #studies").css('border-bottom', 'none' );	
@@ -39,5 +39,5 @@ $(function (){
 		$("#projects, #studies, #home").css('border-bottom', 'none' );	
 		$("#contact").css('border-bottom', '1px solid #6E6E6E');	
 		return false;
-	});			
+	});	*/		
 }); 		

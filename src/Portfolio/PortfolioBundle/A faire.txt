@@ -1,0 +1,9 @@
+Pages - Ajouter un layout
+
+Page projets - Liste 10 derniers projets ( page 1 ) , ajax requetes ( page 2 * 10 , 3 * 10 derniers ) ...
+Page chat - chat ajax 
+Page Projet - titre description contenu ( image(s) , commentaires ajax ... ) 
+Page Accueil - 10 images des 10 derniers projets
+
+Objet article ( id_image image par défault du projet )
+Relation many to one image - article commentaire - article

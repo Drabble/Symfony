@@ -1,0 +1,14 @@
+{% extends "PortfolioPortfolioBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Portfolio - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div class="row" id="page_home">
+	  <div class="span12">
+			{{ article.autor }}
+			{{ article.date|date('d/m/Y') }}
+	  </div>
+	</div>
+{% endblock %}
