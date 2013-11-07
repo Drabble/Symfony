@@ -58,7 +58,7 @@ class Article
 
 	public function __construct()
 	{
-		$this->date = new \Datetime();
+		$this->date = new \Datetime('now');
 		$this->publication = true;
 	}
 	 

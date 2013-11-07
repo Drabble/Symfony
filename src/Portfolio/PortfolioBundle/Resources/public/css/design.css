@@ -5,6 +5,11 @@ body {
 	background-attachment:fixed;
 }
 
+.thumbnail {
+	background-color:rgba(255,255,255,0.4);
+	padding: 10px;
+}
+
 a{color: black;}
 hr{border-top: 1px solid #ccc;}
 i {color: black; font-size: 20px; margin-right: 5px;}

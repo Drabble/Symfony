@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Image
 {
+	/**
+	* @ORM\ManyToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Article")
+	* @ORM\JoinColumn(nullable=false)
+	*/
+	private $article;
     /**
      * @var integer
      *
@@ -49,7 +54,11 @@ class Image
      */
     private $date;
 
-
+	public function __construct()
+	{
+		$this->date = new \Datetime('now');
+		$this->url = "";
+	}
     /**
      * Get id
      *
@@ -137,7 +146,7 @@ class Image
      */
     public function setDate($date)
     {
-        $this->date = $date;
+        $this->date = new \DateTime("now");
     
         return $this;
     }
@@ -150,5 +159,28 @@ class Image
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set article
+     *
+     * @param \Portfolio\PortfolioBundle\Entity\Article $article
+     * @return Image
+     */
+    public function setArticle(\Portfolio\PortfolioBundle\Entity\Article $article)
+    {
+        $this->article = $article;
+    
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \Portfolio\PortfolioBundle\Entity\Article 
+     */
+    public function getArticle()
+    {
+        return $this->article;
     }
 }

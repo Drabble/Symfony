@@ -39,7 +39,7 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
     public function block_body($context, array $blocks = array())
     {
         // line 8
-        echo "\t<div class=\"row\" id=\"page_home\">
+        echo "\t<div class=\"row\">
 \t  <div class=\"span12\">
 \t\t<div id=\"slides\">
 \t\t  <img class=\"slider_img\" src=\"";
