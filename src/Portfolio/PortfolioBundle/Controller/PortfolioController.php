@@ -80,13 +80,7 @@ class PortfolioController extends Controller
 		$repository = $this->getDoctrine()
 						->getManager()
 						->getRepository('PortfolioPortfolioBundle:Article');
-		/*$article = $repository->find(1);
-		if($article === null)
-		{
-			throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
-		}*/
-		// On récupère la liste des commentaires
-		// On récupère la liste des commentaires
+
 		$listeArticles = $repository->findBy(array(), array('id' => 'DESC'));
  
 		foreach($listeArticles as $article)
@@ -105,6 +99,30 @@ class PortfolioController extends Controller
 	
 		}
 		return $this->render('PortfolioPortfolioBundle:Portfolio:articles.html.twig', array('articles' => $array_articles, "active" => "articles"));
+	}
+	public function articleAction($id)
+	{
+		$repository = $this->getDoctrine()
+						->getManager()
+						->getRepository('PortfolioPortfolioBundle:Article');
+		$article = $repository->find($id);
+		if($article === null)
+		{
+			throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+		}
+		$list_comments = $repository->findAll();
+		$list_images = $repository->findAll();
+		$array_article = array(
+			"description" => $article->getDescription(),
+			"content" => $article->getContent(),
+			"title" => $article->getTitle(),
+			"id" => $article->getId(),
+			"comments" => $list_comments,
+			"images" => $list_images,
+		);
+		return $this->render('PortfolioPortfolioBundle:Portfolio:article.html.twig', array(
+		'article' => $array_article, "active" => "article"
+		));
 	}
 }
 ?>

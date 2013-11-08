@@ -86,6 +86,7 @@
   'testBlogBundle:Blog:voir.html.twig' => 'C:\\wamp\\www\\Symfony\\src\\test\\BlogBundle/Resources/views/Blog/voir.html.twig',
   'testBlogBundle::layout.html.twig' => 'C:\\wamp\\www\\Symfony\\src\\test\\BlogBundle/Resources/views/layout.html.twig',
   'PortfolioPortfolioBundle::layout.html.twig' => 'C:\\wamp\\www\\Symfony\\src\\Portfolio\\PortfolioBundle/Resources/views/layout.html.twig',
+  'PortfolioPortfolioBundle:Portfolio:article.html.twig' => 'C:\\wamp\\www\\Symfony\\src\\Portfolio\\PortfolioBundle/Resources/views/Portfolio/article.html.twig',
   'PortfolioPortfolioBundle:Portfolio:articles.html.twig' => 'C:\\wamp\\www\\Symfony\\src\\Portfolio\\PortfolioBundle/Resources/views/Portfolio/articles.html.twig',
   'PortfolioPortfolioBundle:Portfolio:contact.html.twig' => 'C:\\wamp\\www\\Symfony\\src\\Portfolio\\PortfolioBundle/Resources/views/Portfolio/contact.html.twig',
   'PortfolioPortfolioBundle:Portfolio:index.html.twig' => 'C:\\wamp\\www\\Symfony\\src\\Portfolio\\PortfolioBundle/Resources/views/Portfolio/index.html.twig',
