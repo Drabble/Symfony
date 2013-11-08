@@ -41,6 +41,7 @@ class appDevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'Articles' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::articlesAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/articles',    ),  ),  4 =>   array (  ),),
         'Studies' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::studiesAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/studies',    ),  ),  4 =>   array (  ),),
         'Contact' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::contactAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/contact',    ),  ),  4 =>   array (  ),),
+        'Article' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::articleAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/article/{}',    ),  ),  4 =>   array (  ),),
     );
 
     /**

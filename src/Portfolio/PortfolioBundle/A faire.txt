@@ -6,4 +6,12 @@ Page Projet - titre description contenu ( image(s) , commentaires ajax ... )
 Page Accueil - 10 images des 10 derniers projets
 
 Objet article ( id_image image par défault du projet )
-Relation many to one image - article commentaire - article
+Relation many to one image - article commentaire - article0
+
+
+Recup sur autre ordi :
+php app/console cache:clear
+php app/console doctrine:database:create
+php app/console doctrine:schema:update --dump-sql
+php app/console doctrine:schema:update --force
+php app/console assets:install --symlink //Pour les resources

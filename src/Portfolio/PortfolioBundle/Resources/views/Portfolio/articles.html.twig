@@ -11,10 +11,10 @@
 				{% for key,article in articles %}
 				  <li class="span6">
 					<div class="thumbnail">
-						<h3>Title test</h3>
-					  <img src="{{ asset('bundles/portfolioportfolio/pictures/Penguins.jpg') }}" data-src="data-src="holder.js/300x200" alt="Test"><br/>
-					  <p>{{ article.0 }}</p>
-					  <a href="#" class="btn btn-primary">Display</a>
+						<h3><a href="/Symfony/web/app_dev.php/article/{{ article.id }}" >Title test</a></h3>
+						<img src="{{ asset('bundles/portfolioportfolio/pictures/Penguins.jpg') }}" data-src="data-src="holder.js/300x200" alt="Test"><br/>
+						<p>{{ article.description }}</p>
+						<a href="/Symfony/web/app_dev.php/article/{{ article.id }}" class="btn btn-primary">Display</a>
 					</div>
 				  </li>
 				{% endfor %}

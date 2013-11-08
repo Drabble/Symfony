@@ -201,6 +201,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::contactAction',  '_route' => 'Contact',);
         }
 
+        // Article
+        if ($pathinfo === '/article/{}') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::articleAction',  '_route' => 'Article',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

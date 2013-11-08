@@ -13,3 +13,6 @@ Studies:
 Contact:
     path:     /contact
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:contact }
+Article:
+    path:     /article/{}
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:article }

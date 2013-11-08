@@ -76,7 +76,7 @@ class PortfolioController extends Controller
 	
 	public function articlesAction()
 	{
-		$array_article = array();
+		$array_articles = array();
 		$repository = $this->getDoctrine()
 						->getManager()
 						->getRepository('PortfolioPortfolioBundle:Article');
@@ -91,12 +91,20 @@ class PortfolioController extends Controller
  
 		foreach($listeArticles as $article)
 		{
-			$liste_comment = $repository->findAll();
-			$liste_image = $repository->findAll();
+			$list_comments = $repository->findAll();
+			$list_images = $repository->findAll();
 		  // $article est une instance de Article
-		  array_push($array_article, $article->getDescription(), $article->getTitle(), $liste_comment, $liste_image);
+		  $array_article = array(
+			"description" => $article->getDescription(),
+			"title" => $article->getTitle(),
+			"id" => $article->getId(),
+			"comments" => $list_comments,
+			"images" => $list_images,
+			);
+			array_push($array_articles, $array_article);
+	
 		}
-		return $this->render('PortfolioPortfolioBundle:Portfolio:articles.html.twig', array('articles' => $array_article, "active" => "articles"));
+		return $this->render('PortfolioPortfolioBundle:Portfolio:articles.html.twig', array('articles' => $array_articles, "active" => "articles"));
 	}
 }
 ?>
