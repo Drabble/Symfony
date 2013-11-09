@@ -1,0 +1,19 @@
+{% extends "PortfolioPortfolioBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Portfolio - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+	  <div class="span12">
+		<h2>{{ article.title }}</h2>
+		<img src="{{ asset('bundles/portfolioportfolio/pictures/Penguins.jpg') }}" alt="Test" />
+		<p><br/><b>Description : </b><br/>{{ article.description }}</p>
+		<p><b>Content : </b><br/>{{ article.content }}</p><br/>		
+		<p>Created the {{ article.date|date('d.m.Y') }} at {{ article.date|date('H:i:s') }}</p>
+		<p><center><b>Created by {{ article.autor }}</b></center></p>
+
+	  </div>
+	</div>
+{% endblock %}

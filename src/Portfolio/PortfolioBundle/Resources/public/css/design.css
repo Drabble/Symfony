@@ -4,19 +4,36 @@ body {
 	background-image: url("../images/background.jpg"); 
 	background-attachment:fixed;
 }
-
 .thumbnail {
-	background-color:rgba(255,255,255,0.4);
+	background-color:rgba(255,255,255,0.3);
 	padding: 10px;
+	margin-bottom: 20px;
 }
-
-a{color: black;}
-hr{border-top: 1px solid #ccc;}
-i {color: black; font-size: 20px; margin-right: 5px;}
-i:hover {opacity:0.5;}
-h1 {font-size: 50px; color: #666362; text-decoration: none;}
-a:hover {text-decoration: none;}
-.active_page{border-bottom:1px solid #6E6E6E;}
+.upload{
+float: right;
+}
+#title {font-weight:bold;}
+a{
+	color: black;
+}
+hr{
+	border-top: 1px solid #ccc;
+}
+i {
+	color: black; font-size: 20px; margin-right: 5px;
+}
+i:hover {
+	opacity:0.5;
+}
+h1 {
+	font-size: 50px; color: #666362; text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.active_page{
+	border-bottom:1px solid #6E6E6E;
+}
 
 #slides {display: none}
 #slider_img{position:fixed;}

@@ -19,84 +19,137 @@ class PortfolioController extends Controller
 	public function contactAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:contact.html.twig', array("active" => "contact"));
 	}
+	public function adminAction(){
+		return $this->render('PortfolioPortfolioBundle:Portfolio:admin.html.twig', array("active" => "admin"));
+	}
   
 	public function addArticleAction()
 	{
-		// Création de l'entité Article
-		$article = new Article();
-		$article->setTitle('Test post');
-		$article->setDescription('Test post description');
-		$article->setContent("Projet de test portfolio ... blablabla");
-		$article->setAutor('Tony');
+		$request = $this->get('request');
+		$title_value = $request->request->get('title');
+		$content_value = $request->request->get('content');
+		$description_value = $request->request->get('description');
+		$autor_value = $request->request->get('autor');
+		$images_value = $request->request->get('images');
+		if ($request->getMethod() == 'POST') {
+			$article = new Article();
+			$article->setTitle($title_value);
+			$article->setDescription($description_value);
+			$article->setContent($content_value);
+			$article->setAutor($autor_value);
+			/*move_uploaded_file($images_value["file"]["tmp_name"],('PortfolioPortfolioBundle:Portfolio: . $images_value["file"]["name"]);*/
+			/*$comment1 = new Comment();
+			$comment1->setAutor('Jesus2');
+			$comment1->setContent('Jah bless2');
 
-		// Création d'un premier comment
-		$comment1 = new Comment();
-		$comment1->setAutor('Jesus');
-		$comment1->setContent('Jah bless');
+			$comment2 = new comment();
+			$comment2->setAutor('Dafuq2');
+			$comment2->setContent('Comment test2');*/
+			
+			$image1 = new Image();
+			$image1->setLink('image3');
+			$image1->setTitle('ImageTest');
 
-		// Création d'un deuxième comment, par exemple
-		$comment2 = new comment();
-		$comment2->setAutor('Dafuq');
-		$comment2->setContent('Comment test');
-		
-		// Création d'un premier image
-		$image1 = new Image();
-		$image1->setLink('image2');
-		$image1->setTitle('ImageTest');
+			/*$comment1->setArticle($article);
+			$comment2->setArticle($article);*/
+			$image1->setArticle($article);
+			/*$image2->setArticle($article);*/
 
-		// Création d'un deuxième image, par exemple
-		$image2 = new Image();
-		$image2->setLink('image1');
-		$image2->setTitle('ImageTest2');
+			$em = $this->getDoctrine()->getManager();
 
-		// On lie les comments à l'article
-		$comment1->setArticle($article);
-		$comment2->setArticle($article);
-		$image1->setArticle($article);
-		$image2->setArticle($article);
+			$em->persist($article);
 
-		// On récupère l'EntityManager
-		$em = $this->getDoctrine()->getManager();
+			/*$em->persist($comment1);
+			$em->persist($comment2);*/
+			$em->persist($image1);
+			/*$em->persist($image2);*/
 
-		// Étape 1 : On persiste les entités
-		$em->persist($article);
-		// Pour cette relation pas de cascade, car elle est définie dans l'entité comment et non Article
-		// On doit donc tout persister à la main ici
-		$em->persist($comment1);
-		$em->persist($comment2);
-		$em->persist($image1);
-		$em->persist($image2);
-
-		// Étape 2 : On déclenche l'enregistrement
-		$em->flush();
-
-		// … reste de la méthode
+			$em->flush();
+		}
 		return $this->articlesAction();
+		/*
+		$article = new Article;
+		$form = $this->createForm(new ArticleType(), $article);
+		$request = $this->getRequest();
+		if ($request->getMethod() == 'POST') {
+		$form->bind($request);
+			if ($form->isValid()) { 
+				
+				$image1 = new Image();
+				$image1->setLink('image3');
+				$image1->setTitle('ImageTest');
+
+
+				$image1->setArticle($article);
+
+				$em = $this->getDoctrine()->getManager();
+
+				$em->persist($article);
+				$images_dir = __DIR__ . '/../../../../web/pictures/';
+
+				$image1->setArticle($article);
+				$em->persist($image1);
+
+				$em->flush();
+				
+				return $this->articlesAction();
+			}
+		}
+		return $this->render('PortfolioPortfolioBundle:Portfolio:admin.html.twig', array("active" => "admin"));*/
 	}
 	
 	public function articlesAction()
 	{
-		$array_article = array();
+		$array_articles = array();
 		$repository = $this->getDoctrine()
 						->getManager()
 						->getRepository('PortfolioPortfolioBundle:Article');
-		/*$article = $repository->find(1);
-		if($article === null)
-		{
-			throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
-		}*/
-		// On récupère la liste des commentaires
-		// On récupère la liste des commentaires
+
 		$listeArticles = $repository->findBy(array(), array('id' => 'DESC'));
  
 		foreach($listeArticles as $article)
 		{
-			$liste_comment = $repository->findAll();
-			$liste_image = $repository->findAll();
+			$list_comments = $repository->findAll();
+			$list_images = $repository->findAll();
 		  // $article est une instance de Article
-		  array_push($array_article, $article->getDescription(), $article->getTitle(), $liste_comment, $liste_image);
+		  $array_article = array(
+			"description" => $article->getDescription(),
+			"title" => $article->getTitle(),
+			"id" => $article->getId(),
+			"autor" => $article->getAutor(),
+			"comments" => $list_comments,
+			"images" => $list_images,
+			);
+			array_push($array_articles, $array_article);
+	
 		}
-		return $this->render('PortfolioPortfolioBundle:Portfolio:articles.html.twig', array('articles' => $array_article, "active" => "articles"));
+		return $this->render('PortfolioPortfolioBundle:Portfolio:articles.html.twig', array('articles' => $array_articles, "active" => "articles"));
+	}
+	public function articleAction($id)
+	{
+		$repository = $this->getDoctrine()
+						->getManager()
+						->getRepository('PortfolioPortfolioBundle:Article');
+		$article = $repository->find($id);
+		if($article === null)
+		{
+			throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+		}
+		$list_comments = $repository->findAll();
+		$list_images = $repository->findAll();
+		$array_article = array(
+			"description" => $article->getDescription(),
+			"content" => $article->getContent(),
+			"title" => $article->getTitle(),
+			"id" => $article->getId(),
+			"date" => $article->getDate(),
+			"autor" => $article->getAutor(),
+			"comments" => $list_comments,
+			"images" => $list_images,
+		);
+		return $this->render('PortfolioPortfolioBundle:Portfolio:article.html.twig', array(
+		'article' => $array_article, "active" => "article"
+		));
 	}
 }
 ?>

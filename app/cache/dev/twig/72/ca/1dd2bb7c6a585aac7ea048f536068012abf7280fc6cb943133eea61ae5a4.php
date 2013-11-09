@@ -39,10 +39,21 @@ class __TwigTemplate_72ca1dd2bb7c6a585aac7ea048f536068012abf7280fc6cb943133eea61
     public function block_body($context, array $blocks = array())
     {
         // line 8
-        echo "\t<div class=\"row\" id=\"page_studies\">
+        echo "\t<div class=\"row\">
 \t  <div class=\"span12\">
 \t\t<h2>Studies</h2>
-\t\t<p>YO</p>
+\t\t<p>
+\t\t\t<ul>
+\t\t\t\t<li><b>Senior Designer</b><br/>
+\t\t\t\tHoller Sydney, Australia<br/></li>
+\t\t\t\t<li><b>Designer</b><br/>
+\t\t\t\tHoller Sydney, Australia<br/></li>
+\t\t\t\t<li><b>Illustrator & Designer</b><br/>
+\t\t\t\tReborn Sydney, Australia<br/></li>
+\t\t\t\t<li><b>Illustrator, Designer and Animator</b><br/>
+\t\t\t\tCyberdesign Works Sydney, Australia</li>
+\t\t\t</ul>
+\t\t</p>
 \t  </div>
 \t</div>
 ";

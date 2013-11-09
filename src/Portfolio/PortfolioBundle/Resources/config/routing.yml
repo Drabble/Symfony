@@ -13,3 +13,9 @@ Studies:
 Contact:
     path:     /contact
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:contact }
+Admin:
+    path:     /admin
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:admin }
+Article:
+    path:     /article/{id}
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:article }

@@ -40,32 +40,32 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
     {
         // line 8
         echo "\t<div class=\"row\">
-\t  <div class=\"span12\">
-\t\t<div id=\"slides\">
-\t\t  <img class=\"slider_img\" src=\"";
+\t\t<div class=\"span12\">
+\t\t\t<div id=\"slides\">
+\t\t\t\t<img class=\"slider_img\" src=\"";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/Penguins.jpg"), "html", null, true);
         echo "\" alt=
-\t\t  \"Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/\" />
-\t\t  <img class=\"slider_img\" src=\"";
+\t\t\t\t\"Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/\" />
+\t\t\t\t<img class=\"slider_img\" src=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/Desert.jpg"), "html", null, true);
         echo "\" alt=
-\t\t  \"Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/\" />
-\t\t   <img class=\"slider_img\" src=\"";
+\t\t\t\t\"Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/\" />
+\t\t\t\t<img class=\"slider_img\" src=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/JellyFish.jpg"), "html", null, true);
         echo "\" alt=
-\t\t  \"Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/\" />
-\t\t   <img class=\"slider_img\" src=\"";
+\t\t\t\t\"Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/\" />
+\t\t\t\t<img class=\"slider_img\" src=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/a4.jpg"), "html", null, true);
         echo "\" alt=
-\t\t  \"Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/\" />
-\t\t   <a href=\"#\" class=\"slidesjs-previous slidesjs-navigation\"></a> <a href=\"#\"
-\t\t  class=\"slidesjs-next slidesjs-navigation\"></a>
+\t\t\t\t\"Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/\" />
+\t\t\t\t<a href=\"#\" class=\"slidesjs-previous slidesjs-navigation\"></a> <a href=\"#\"
+\t\t\t\tclass=\"slidesjs-next slidesjs-navigation\"></a>
+\t\t\t</div>
 \t\t</div>
-\t  </div>
 \t</div>
 ";
     }

@@ -40,17 +40,26 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/css/design.css"), "html", null, true);
         echo "\" />
+\t\t
 \t\t<script src=\"//code.jquery.com/jquery-latest.min.js\" type=\"text/javascript\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 14
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/jquery.slides.min.js"), "html", null, true);
         echo "\"></script> 
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 15
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/vendor/jquery.ui.widget.js"), "html", null, true);
+        echo "\"></script> 
+\t\t<script type=\"text/javascript\" src=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/jquery.slides.min.js"), "html", null, true);
+        echo "\"></script> 
+\t\t<script type=\"text/javascript\" src=\"";
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/portfolio.js"), "html", null, true);
         echo "\"></script> 
 \t</head>
@@ -58,7 +67,7 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t<div class=\"container\">
 \t\t\t<div class=\"row\">
 \t\t\t  <div class=\"span3\">
-\t\t\t\t<h1><a href=\"/Bootstrap/\">Portfolio</a></h1>
+\t\t\t\t<h1><a href=\"/\">Portfolio</a></h1>
 \t\t\t  </div>
 \t\t\t  <div class=\"span9\">
 \t\t\t\t<br />
@@ -77,37 +86,43 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t\t<ul class=\"nav nav-tabs\">
 \t\t\t\t\t
 \t\t\t\t  <li id=\"menu\" ";
-        // line 39
+        // line 42
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "index")) {
             echo "class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/\">Home</a></li>
 \t\t\t\t  <li id=\"menu\" ";
-        // line 40
+        // line 43
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "studies")) {
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/studies\">Studies</a></li>
 \t\t\t\t  <li id=\"menu\" ";
-        // line 41
+        // line 44
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "articles")) {
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/articles\">Articles</a></li>
 \t\t\t\t  <li id=\"menu\" ";
-        // line 42
+        // line 45
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "contact")) {
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/contact\">Contact</a></li>
+\t\t\t\t  <li id=\"menu\" ";
+        // line 46
+        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "admin")) {
+            echo " class=\"active_page\"";
+        }
+        echo "><a href=\"/Symfony/web/app_dev.php/admin\">Admin</a></li>
 \t\t\t\t</ul>
 \t\t\t  </div>
 \t\t\t</div>
  
     ";
-        // line 47
+        // line 51
         $this->displayBlock('body', $context, $blocks);
-        // line 49
+        // line 53
         echo " 
 \t<br />
 \t<br />
@@ -122,10 +137,10 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 </html>";
     }
 
-    // line 47
+    // line 51
     public function block_body($context, array $blocks = array())
     {
-        // line 48
+        // line 52
         echo "    ";
     }
 
@@ -141,6 +156,6 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 
     public function getDebugInfo()
     {
-        return array (  129 => 48,  126 => 47,  111 => 49,  109 => 47,  99 => 42,  93 => 41,  87 => 40,  81 => 39,  54 => 15,  50 => 14,  46 => 13,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  71 => 21,  60 => 16,  56 => 15,  51 => 12,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
+        return array (  144 => 52,  141 => 51,  126 => 53,  124 => 51,  114 => 46,  108 => 45,  102 => 44,  96 => 43,  90 => 42,  63 => 18,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
     }
 }

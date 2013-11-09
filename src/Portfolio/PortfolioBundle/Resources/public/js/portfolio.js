@@ -1,4 +1,4 @@
-$(function (){			
+$(function (){	
 	$("[rel='tooltip']").tooltip();		
 	$('#slides').slidesjs({				
 		width: 940,				
@@ -11,7 +11,8 @@ $(function (){
 		if (height>400){					
 			$(this).css('top', ('-' + diff + 'px'));	
 		}	
-	});			
+	});		
+	$('.thumbnail').equalHeights();
 	/*$('#home').click(function() {	
 		$("#page_studies, #page_contact, #page_projects").css('display', 'none');
 		$("#page_home").css('display', 'block');					
