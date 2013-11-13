@@ -6,22 +6,35 @@
 
 {% block body %}
 	<div class="row">
-		<form class="thumbnail span10" name="addArticle" action="/Symfony/web/app_dev.php/addArticle" method="post" enctype="multipart/form-data">
-			<h2>New article<h2/><br/>
-			<div class="upload span3">
-				<span id="images" style="display:none;">Multiple </span>Images: <input type="file" name="files" multiple="multiple"><br/>
-			</div>
-			<div class="controls controls-row">
-				<input id="autor" name="autor" type="text" class="span3" placeholder="Autor"> 
-				<input id="title" name="title" type="text" class="span3" placeholder="Title"> 
-			</div>
-			<div class="controls">
-				<textarea id="description" name="description" class="span6" placeholder="Description" rows="3"></textarea><br/>
-				<textarea id="content" name="content" class="span6" placeholder="Content" rows="5"></textarea>
-			</div>
-			<div class="controls">
-				<button id="contact-submit" type="submit" class="btn btn-primary input-medium pull-right">Send</button>
-			</div>
+		<p></p>
+		<form class="img-thumbnail col-md-12" name="addArticle" action="/Symfony/web/app_dev.php/addArticle" method="post" enctype="multipart/form-data">
+			<div class="col-md-10 form">
+				<h2>New article<h2/><br/>
+				<div class="upload col-md-4s">
+					<input type="file" name="files" multiple="multiple" class="form-control"><br/>
+				</div>
+				<div class="controls-group col-md-4">
+					<div class="controls">
+						<input id="title" name="title" type="text" class="form-control" placeholder="Title"> <br/>
+					</div>
+				</div>
+				<div class="controls-group col-md-4">
+					<div class="controls">
+						<input id="autor" name="autor" type="text" class="form-control" placeholder="Autor"> <br/>
+					</div>
+				</div>
+				<div class="controls-group col-md-10">
+					<div class="controls">
+						<textarea id="description" name="description" class="form-control" placeholder="Description" rows="3"></textarea><br/>
+						<textarea id="content" name="content" class="form-control" placeholder="Content" rows="5"></textarea>
+					</div>
+				</div>
+				<div style="position: absolute; bottom: 0; right: 0;" class="controls-group col-md-6">
+					<div class="controls">
+						<button id="contact-submit" type="submit" class="btn btn-primary pull-right">Send</button>
+					</div>
+				</div>
+			</div >
 		</form>
 	</div>
 	

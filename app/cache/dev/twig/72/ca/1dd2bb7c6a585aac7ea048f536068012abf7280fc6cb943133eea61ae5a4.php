@@ -40,7 +40,7 @@ class __TwigTemplate_72ca1dd2bb7c6a585aac7ea048f536068012abf7280fc6cb943133eea61
     {
         // line 8
         echo "\t<div class=\"row\">
-\t  <div class=\"span12\">
+\t  <div class=\"col-md-12\">
 \t\t<h2>Studies</h2>
 \t\t<p>
 \t\t\t<ul>

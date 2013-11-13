@@ -30,7 +30,7 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
         echo "\" />
 \t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/css/bootstrap-responsive.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/css/bootstrap-theme.min.css"), "html", null, true);
         echo "\" />
 \t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 10
@@ -66,10 +66,10 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t<body>
 \t\t<div class=\"container\">
 \t\t\t<div class=\"row\">
-\t\t\t  <div class=\"span3\">
+\t\t\t  <div class=\"col-md-3\">
 \t\t\t\t<h1><a href=\"/\">Portfolio</a></h1>
 \t\t\t  </div>
-\t\t\t  <div class=\"span9\">
+\t\t\t  <div class=\"col-md-9\">
 \t\t\t\t<br />
 \t\t\t\t<p class=\"pull-right\">
 \t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Twitter\" class=\"icon-twitter\"></i></a>
@@ -82,7 +82,7 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t</div>
 \t\t\t<hr />
 \t\t\t<div class=\"row\">
-\t\t\t  <div class=\"span6\">
+\t\t\t  <div class=\"col-md-6\">
 \t\t\t\t<ul class=\"nav nav-tabs\">
 \t\t\t\t\t
 \t\t\t\t  <li id=\"menu\" ";
@@ -128,7 +128,7 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t<br />
 \t<hr />
     <div class=\"row\">
-\t\t\t  <div class=\"span12\">
+\t\t\t  <div class=\"col-md-12\">
 \t\t\t\t<p>Copyright Drabble 2013</p>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -156,6 +156,6 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 
     public function getDebugInfo()
     {
-        return array (  144 => 52,  141 => 51,  126 => 53,  124 => 51,  114 => 46,  108 => 45,  102 => 44,  96 => 43,  90 => 42,  63 => 18,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
+        return array (  144 => 52,  141 => 51,  126 => 53,  124 => 51,  114 => 46,  108 => 45,  102 => 44,  96 => 43,  90 => 42,  63 => 18,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }

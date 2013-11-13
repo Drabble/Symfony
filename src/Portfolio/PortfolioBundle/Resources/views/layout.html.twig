@@ -6,7 +6,7 @@
 		<meta name="author" content="Antoine Drabble" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolioportfolio/css/bootstrap.min.css') }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolioportfolio/css/bootstrap-responsive.min.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolioportfolio/css/bootstrap-theme.min.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolioportfolio/font-awesome/css/font-awesome.min.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolioportfolio/css/design.css') }}" />
 		
@@ -20,10 +20,10 @@
 	<body>
 		<div class="container">
 			<div class="row">
-			  <div class="span3">
+			  <div class="col-md-3">
 				<h1><a href="/">Portfolio</a></h1>
 			  </div>
-			  <div class="span9">
+			  <div class="col-md-9">
 				<br />
 				<p class="pull-right">
 					<a href="#"><i rel="tooltip" data-original-title="Twitter" class="icon-twitter"></i></a>
@@ -36,7 +36,7 @@
 			</div>
 			<hr />
 			<div class="row">
-			  <div class="span6">
+			  <div class="col-md-6">
 				<ul class="nav nav-tabs">
 					
 				  <li id="menu" {% if active == "index" %}class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/">Home</a></li>
@@ -55,7 +55,7 @@
 	<br />
 	<hr />
     <div class="row">
-			  <div class="span12">
+			  <div class="col-md-12">
 				<p>Copyright Drabble 2013</p>
 				</div>
 			</div>

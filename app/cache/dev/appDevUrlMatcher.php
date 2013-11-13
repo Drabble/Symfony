@@ -212,6 +212,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'Article')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::articleAction',));
             }
 
+            // addComment
+            if ($pathinfo === '/addComment') {
+                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::addCommentAction',  '_route' => 'addComment',);
+            }
+
+        }
+
+        // getComments
+        if (0 === strpos($pathinfo, '/getComments') && preg_match('#^/getComments/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'getComments')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::getCommentsAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

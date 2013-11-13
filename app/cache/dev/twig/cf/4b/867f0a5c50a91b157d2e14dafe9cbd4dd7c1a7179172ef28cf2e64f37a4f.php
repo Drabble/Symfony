@@ -40,22 +40,35 @@ class __TwigTemplate_cf4b867f0a5c50a91b157d2e14dafe9cbd4dd7c1a7179172ef28cf2e64f
     {
         // line 8
         echo "\t<div class=\"row\">
-\t\t<form class=\"thumbnail span10\" name=\"addArticle\" action=\"/Symfony/web/app_dev.php/addArticle\" method=\"post\" enctype=\"multipart/form-data\">
-\t\t\t<h2>New article<h2/><br/>
-\t\t\t<div class=\"upload span3\">
-\t\t\t\t<span id=\"images\" style=\"display:none;\">Multiple </span>Images: <input type=\"file\" name=\"files\" multiple=\"multiple\"><br/>
-\t\t\t</div>
-\t\t\t<div class=\"controls controls-row\">
-\t\t\t\t<input id=\"autor\" name=\"autor\" type=\"text\" class=\"span3\" placeholder=\"Autor\"> 
-\t\t\t\t<input id=\"title\" name=\"title\" type=\"text\" class=\"span3\" placeholder=\"Title\"> 
-\t\t\t</div>
-\t\t\t<div class=\"controls\">
-\t\t\t\t<textarea id=\"description\" name=\"description\" class=\"span6\" placeholder=\"Description\" rows=\"3\"></textarea><br/>
-\t\t\t\t<textarea id=\"content\" name=\"content\" class=\"span6\" placeholder=\"Content\" rows=\"5\"></textarea>
-\t\t\t</div>
-\t\t\t<div class=\"controls\">
-\t\t\t\t<button id=\"contact-submit\" type=\"submit\" class=\"btn btn-primary input-medium pull-right\">Send</button>
-\t\t\t</div>
+\t\t<p></p>
+\t\t<form class=\"img-thumbnail col-md-12\" name=\"addArticle\" action=\"/Symfony/web/app_dev.php/addArticle\" method=\"post\" enctype=\"multipart/form-data\">
+\t\t\t<div class=\"col-md-10 form\">
+\t\t\t\t<h2>New article<h2/><br/>
+\t\t\t\t<div class=\"upload col-md-4s\">
+\t\t\t\t\t<input type=\"file\" name=\"files\" multiple=\"multiple\" class=\"form-control\"><br/>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"controls-group col-md-4\">
+\t\t\t\t\t<div class=\"controls\">
+\t\t\t\t\t\t<input id=\"title\" name=\"title\" type=\"text\" class=\"form-control\" placeholder=\"Title\"> <br/>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"controls-group col-md-4\">
+\t\t\t\t\t<div class=\"controls\">
+\t\t\t\t\t\t<input id=\"autor\" name=\"autor\" type=\"text\" class=\"form-control\" placeholder=\"Autor\"> <br/>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"controls-group col-md-10\">
+\t\t\t\t\t<div class=\"controls\">
+\t\t\t\t\t\t<textarea id=\"description\" name=\"description\" class=\"form-control\" placeholder=\"Description\" rows=\"3\"></textarea><br/>
+\t\t\t\t\t\t<textarea id=\"content\" name=\"content\" class=\"form-control\" placeholder=\"Content\" rows=\"5\"></textarea>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div style=\"position: absolute; bottom: 0; right: 0;\" class=\"controls-group col-md-6\">
+\t\t\t\t\t<div class=\"controls\">
+\t\t\t\t\t\t<button id=\"contact-submit\" type=\"submit\" class=\"btn btn-primary pull-right\">Send</button>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div >
 \t\t</form>
 \t</div>
 \t

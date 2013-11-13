@@ -19,3 +19,9 @@ Admin:
 Article:
     path:     /article/{id}
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:article }
+addComment:
+    path:     /addComment
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:addComment }
+getComments:
+    path:     /getComments/{id}
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:getComments }

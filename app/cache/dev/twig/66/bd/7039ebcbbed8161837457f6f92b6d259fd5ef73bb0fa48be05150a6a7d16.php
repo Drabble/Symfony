@@ -40,25 +40,26 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
     {
         // line 8
         echo "\t<div class=\"row\">
-\t\t<div class=\"span12\">
+\t\t<div class=\"col-md-12\">
+\t\t\t<h2>Welcome</h2>
 \t\t\t<div id=\"slides\">
 \t\t\t\t<img class=\"slider_img\" src=\"";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/Penguins.jpg"), "html", null, true);
         echo "\" alt=
 \t\t\t\t\"Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/\" />
 \t\t\t\t<img class=\"slider_img\" src=\"";
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/Desert.jpg"), "html", null, true);
         echo "\" alt=
 \t\t\t\t\"Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/\" />
 \t\t\t\t<img class=\"slider_img\" src=\"";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/JellyFish.jpg"), "html", null, true);
         echo "\" alt=
 \t\t\t\t\"Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/\" />
 \t\t\t\t<img class=\"slider_img\" src=\"";
-        // line 17
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/pictures/a4.jpg"), "html", null, true);
         echo "\" alt=
 \t\t\t\t\"Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/\" />
@@ -82,6 +83,6 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
 
     public function getDebugInfo()
     {
-        return array (  62 => 17,  57 => 15,  52 => 13,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  63 => 18,  58 => 16,  53 => 14,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

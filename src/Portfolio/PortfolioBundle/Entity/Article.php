@@ -55,11 +55,23 @@ class Article
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+	
+	/**
+	* @ORM\OneToMany(targetEntity="Portfolio\PortfolioBundle\Entity\Comment", mappedBy="article")
+	*/
+	private $comments;
+	
+	/**
+	* @ORM\OneToMany(targetEntity="Portfolio\PortfolioBundle\Entity\Image", mappedBy="article")
+	*/
+	private $images;
 
 	public function __construct()
 	{
 		$this->date = new \Datetime('now');
 		$this->publication = true;
+		$this->images = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->comments = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 	 
     /**
@@ -186,4 +198,39 @@ class Article
     {
         return $this->content;
     }
+
+
+	public function addComment(\Portfolio\PortfolioBundle\Entity\Comment $comment)
+	{
+		$this->comments[] = $comment;
+		$comments->setArticle($this);
+		return $this;
+	}
+
+	public function removeComment(\Portfolio\PortfolioBundle\Entity\Comment $comment)
+	{
+		$this->comments->removeElement($comment);
+	}
+
+	public function getcomments()
+	{
+		return $this->comments;
+	}
+
+	public function addImage(\Portfolio\PortfolioBundle\Entity\Image $image)
+	{
+		$this->image[] = $image;
+		$images->setArticle($this);
+		return $this;
+	}
+
+	public function removeImage(\Portfolio\PortfolioBundle\Entity\Image $image)
+	{
+		$this->images->removeElement($image);
+	}
+
+	public function getImages()
+	{
+		return $this->images;
+	}
 }

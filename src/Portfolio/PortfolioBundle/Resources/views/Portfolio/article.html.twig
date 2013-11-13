@@ -6,14 +6,60 @@
 
 {% block body %}
 	<div class="row">
-	  <div class="span12">
-		<h2>{{ article.title }}</h2>
-		<img src="{{ asset('bundles/portfolioportfolio/pictures/Penguins.jpg') }}" alt="Test" />
-		<p><br/><b>Description : </b><br/>{{ article.description }}</p>
-		<p><b>Content : </b><br/>{{ article.content }}</p><br/>		
-		<p>Created the {{ article.date|date('d.m.Y') }} at {{ article.date|date('H:i:s') }}</p>
-		<p><center><b>Created by {{ article.autor }}</b></center></p>
-
-	  </div>
+		<div class="col-md-12">
+			<h2>{{ article.title }}</h2>
+			<img src="{{ asset('bundles/portfolioportfolio/pictures/Jellyfish.jpg') }}" alt="Test" />
+			<p><br/><b>Description : </b><br/>{{ article.description }}</p>
+			<p><b>Content : </b><br/>{{ article.content }}</p><br/>		
+			<p>Created the {{ article.date|date('d.m.Y') }} at {{ article.date|date('H:i:s') }}</p>
+			{% if article.comments is empty %}
+			<div class="panel panel-default widget">
+				<div class="panel-heading">
+						<h3 class="panel-title">No comment yet</h3>
+				</div>
+			</div>
+			{% else %}
+			<div class="panel panel-default widget">
+				<div class="panel-heading">
+					<h3 class="panel-title">Recent Comments</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+						{% for key,comment in article.comments %}
+							<li class="list-group-item">
+								<div class="row">
+									<div class="col-xs-2 col-md-1">
+										<img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
+									<div class="col-xs-10 col-md-11">
+										<div>
+											<div class="mic-info">
+												By: <a href="#">{{ comment.autor }}</a> the {{ comment.date|date("m.d.Y") }} at {{ comment.date|date("H:i:s") }}
+											</div>
+										</div>
+										<div class="comment-text">
+											{{ comment.content }}
+										</div><br/>
+										<div class="action">
+											<button type="button" class="btn btn-primary btn-xs" title="Edit">
+												<span class="glyphicon glyphicon-pencil"></span>
+											</button>
+											<button type="button" class="btn btn-success btn-xs" title="Approved">
+												<span class="glyphicon glyphicon-ok"></span>
+											</button>
+											<button type="button" class="btn btn-danger btn-xs" title="Delete">
+												<span class="glyphicon glyphicon-trash"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			{% endif %}
+			<p></p>
+			<p><center><b>Created by {{ article.autor }}</b></center></p>
+		</div>
 	</div>
 {% endblock %}

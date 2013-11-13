@@ -22,9 +22,59 @@ class PortfolioController extends Controller
 	public function adminAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:admin.html.twig', array("active" => "admin"));
 	}
-  
+	
+	/*public function getCommentsAction(){
+		$request = $this->get('request');
+		$id = $request->request->get('id');
+		//if ($request->getMethod() == 'POST') {
+			$repository = $this->getDoctrine()
+							->getManager()
+							->getRepository('PortfolioPortfolioBundle:Article');
+			$article = $repository->find($id);
+			if($article === null)
+			{
+				throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+			}
+			$list_comments = $article->getComments();
+			return new Response(array('comments' => $list_comments));
+		}
+		return new Response();
+	}
+	
+	public function addCommentAction(){
+		$request = $this->get('request');
+		$content_value = $request->request->get('content');
+		$id = $request->request->get('id');
+		$autor_value = $request->request->get('autor');
+		if ($request->getMethod() == 'POST') {
+			$comment = new Comment();
+			$comment->setContent($content_value);
+			$comment->setAutor($autor_value);
+			$repository = $this->getDoctrine()
+							->getManager()
+							->getRepository('PortfolioPortfolioBundle:Article');
+			$article = $repository->find($id);
+			if($article === null)
+			{
+				throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+			}
+			
+			$article->addComment($comment);
+			
+			$comment->setArticle($article);
+
+			$em = $this->getDoctrine()->getManager();
+
+			$em->persist($article);
+
+			$em->flush();
+		}
+		return new Response(1);
+	}*/
+	
 	public function addArticleAction()
 	{
+	
 		$request = $this->get('request');
 		$title_value = $request->request->get('title');
 		$content_value = $request->request->get('content');
@@ -45,6 +95,13 @@ class PortfolioController extends Controller
 			$comment2 = new comment();
 			$comment2->setAutor('Dafuq2');
 			$comment2->setContent('Comment test2');*/
+			
+			/*foreach ( $images_value as $key => $value){
+				$someNewFilename = $key;
+				$dir = $this->container->getParameter('kernel.root_dir') . '/../web/bundles/portfolioportfolio/pictures';
+				$value->getData()->move($dir, $someNewFilename);
+			}*/
+			
 			
 			$image1 = new Image();
 			$image1->setLink('image3');
@@ -144,8 +201,8 @@ class PortfolioController extends Controller
 			"id" => $article->getId(),
 			"date" => $article->getDate(),
 			"autor" => $article->getAutor(),
-			"comments" => $list_comments,
-			"images" => $list_images,
+			"comments" => $article->getComments(),
+			"images" => $article->getImages(),
 		);
 		return $this->render('PortfolioPortfolioBundle:Portfolio:article.html.twig', array(
 		'article' => $array_article, "active" => "article"
