@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Comment
 {
 	/**
-	* @ORM\ManyToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Article")
+	* @ORM\ManyToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Article", inversedBy="comments")
 	* @ORM\JoinColumn(nullable=false)
 	*/
 	private $article;
@@ -47,7 +47,10 @@ class Comment
      */
     private $content;
 
-
+	public function __construct()
+	{
+		$this->date = new \Datetime('now');
+	}
     /**
      * Get id
      *
@@ -89,7 +92,7 @@ class Comment
      */
     public function setDate($date)
     {
-        $this->date = $date;
+        $this->date = new \DateTime("now");
     
         return $this;
     }
@@ -125,5 +128,28 @@ class Comment
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set article
+     *
+     * @param \Portfolio\PortfolioBundle\Entity\Article $article
+     * @return Comment
+     */
+    public function setArticle(\Portfolio\PortfolioBundle\Entity\Article $article)
+    {
+        $this->article = $article;
+    
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \Portfolio\PortfolioBundle\Entity\Article 
+     */
+    public function getArticle()
+    {
+        return $this->article;
     }
 }

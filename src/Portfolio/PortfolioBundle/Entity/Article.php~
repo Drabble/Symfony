@@ -228,4 +228,9 @@ class Article
 	{
 		$this->images->removeElement($image);
 	}
+
+	public function getImages()
+	{
+		return $this->images;
+	}
 }

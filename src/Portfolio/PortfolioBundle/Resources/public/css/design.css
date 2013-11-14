@@ -9,7 +9,17 @@ body {
 	padding: 10px;
 	margin-bottom: 20px;
 }
-
+#article_image img{
+z-index: 10;
+}
+#article_image figcaption {
+    color: black;
+    font:13px/20px Arial, sans-serif;
+    background:#000000;
+    background:rgba(0,0,0,.2);
+	text-align: left;
+	padding-left: 10px;
+}
 .widget .panel-body { padding:0px; }
 .widget .list-group { margin-bottom: 0; }
 .widget .panel-title { display:inline }
@@ -20,7 +30,7 @@ body {
 .widget .action { margin-top:5px; }
 .widget .comment-text { font-size: 14px; }
 .widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
-.form { margin-bottom: 20px; }
+.form { margin-bottom: 10px; }
 .upload{
 float: right;
 }

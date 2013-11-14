@@ -6,8 +6,6 @@ Page Projet - titre description contenu ( image(s) , commentaires ajax ... )
 Page Accueil - 10 images des 10 derniers projets
 
 Objet article ( id_image image par défault du projet )
-Relation many to one image - article commentaire - article0
-
 
 Recup sur autre ordi :
 php app/console cache:clear

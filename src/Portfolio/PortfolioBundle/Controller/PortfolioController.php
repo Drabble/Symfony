@@ -39,17 +39,9 @@ class PortfolioController extends Controller
 			return new Response(array('comments' => $list_comments));
 		}
 		return new Response();
-	}
+	}*/
 	
-	public function addCommentAction(){
-		$request = $this->get('request');
-		$content_value = $request->request->get('content');
-		$id = $request->request->get('id');
-		$autor_value = $request->request->get('autor');
-		if ($request->getMethod() == 'POST') {
-			$comment = new Comment();
-			$comment->setContent($content_value);
-			$comment->setAutor($autor_value);
+	/*public function addCommentAction(){
 			$repository = $this->getDoctrine()
 							->getManager()
 							->getRepository('PortfolioPortfolioBundle:Article');
@@ -58,11 +50,15 @@ class PortfolioController extends Controller
 			{
 				throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
 			}
-			
+			$comment = new Comment();
+			$formBuilder = $this->createFormBuilder($comment);
+			$formBuilder
+			    ->add('id',        'number')
+			    ->add('autor',       'text')
+			    ->add('content',     'textarea')
+			$form = $formBuilder->getForm();
 			$article->addComment($comment);
 			
-			$comment->setArticle($article);
-
 			$em = $this->getDoctrine()->getManager();
 
 			$em->persist($article);
@@ -124,35 +120,6 @@ class PortfolioController extends Controller
 			$em->flush();
 		}
 		return $this->articlesAction();
-		/*
-		$article = new Article;
-		$form = $this->createForm(new ArticleType(), $article);
-		$request = $this->getRequest();
-		if ($request->getMethod() == 'POST') {
-		$form->bind($request);
-			if ($form->isValid()) { 
-				
-				$image1 = new Image();
-				$image1->setLink('image3');
-				$image1->setTitle('ImageTest');
-
-
-				$image1->setArticle($article);
-
-				$em = $this->getDoctrine()->getManager();
-
-				$em->persist($article);
-				$images_dir = __DIR__ . '/../../../../web/pictures/';
-
-				$image1->setArticle($article);
-				$em->persist($image1);
-
-				$em->flush();
-				
-				return $this->articlesAction();
-			}
-		}
-		return $this->render('PortfolioPortfolioBundle:Portfolio:admin.html.twig', array("active" => "admin"));*/
 	}
 	
 	public function articlesAction()
@@ -185,27 +152,36 @@ class PortfolioController extends Controller
 	public function articleAction($id)
 	{
 		$repository = $this->getDoctrine()
-						->getManager()
-						->getRepository('PortfolioPortfolioBundle:Article');
+							->getManager()
+							->getRepository('PortfolioPortfolioBundle:Article');
+							
+							
 		$article = $repository->find($id);
 		if($article === null)
 		{
 			throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
 		}
-		$list_comments = $repository->findAll();
-		$list_images = $repository->findAll();
-		$array_article = array(
-			"description" => $article->getDescription(),
-			"content" => $article->getContent(),
-			"title" => $article->getTitle(),
-			"id" => $article->getId(),
-			"date" => $article->getDate(),
-			"autor" => $article->getAutor(),
-			"comments" => $article->getComments(),
-			"images" => $article->getImages(),
-		);
+	
+		$comment = new Comment();
+		$comment->setAutor("Anonymous");
+		$form = $this->createFormBuilder($comment)
+			->add('content',     'textarea')
+			->getForm();
+		
+		$request = $this->get('request');
+		if ($request->getMethod() == 'POST') {
+			$form->bind($request);
+			if ($form->isValid()) {
+				$article->addComment($comment);
+				$em = $this->getDoctrine()->getManager();
+				$em->persist($article);
+				$em->persist($comment);
+				$em->flush();
+			}
+		}
+		
 		return $this->render('PortfolioPortfolioBundle:Portfolio:article.html.twig', array(
-		'article' => $array_article, "active" => "article"
+		'article' => $article, "active" => "article", 'form' => $form->createView()
 		));
 	}
 }

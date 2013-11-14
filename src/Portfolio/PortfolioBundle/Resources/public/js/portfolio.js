@@ -12,7 +12,13 @@ $(function (){
 			$(this).css('top', ('-' + diff + 'px'));	
 		}	
 	});		
-	$('.thumbnail').equalHeights();
+	$("textarea").each(function(){
+		$(this).val("");
+		$(this).addClass("form-control");
+		$(this).attr("rows","6");
+		$(this).attr("placeholder","Add a comment");
+	});
+	$('#article_image figcaption').css('width', $('#article_image img').width());
 	/*$('#home').click(function() {	
 		$("#page_studies, #page_contact, #page_projects").css('display', 'none');
 		$("#page_home").css('display', 'block');					

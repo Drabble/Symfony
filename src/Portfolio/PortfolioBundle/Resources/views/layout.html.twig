@@ -12,7 +12,6 @@
 		
 		<script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/bootstrap.min.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/jquery.slides.min.js') }}"></script> 
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/vendor/jquery.ui.widget.js') }}"></script> 
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/jquery.slides.min.js') }}"></script> 
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/portfolio.js') }}"></script> 
@@ -38,25 +37,23 @@
 			<div class="row">
 			  <div class="col-md-6">
 				<ul class="nav nav-tabs">
-					
-				  <li id="menu" {% if active == "index" %}class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/">Home</a></li>
-				  <li id="menu" {% if active == "studies" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/studies">Studies</a></li>
-				  <li id="menu" {% if active == "articles" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/articles">Articles</a></li>
-				  <li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/contact">Contact</a></li>
-				  <li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/admin">Admin</a></li>
+					<li id="menu" {% if active == "index" %}class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/">Home</a></li>
+					<li id="menu" {% if active == "studies" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/studies">Studies</a></li>
+					<li id="menu" {% if active == "articles" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/articles">Articles</a></li>
+					<li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/contact">Contact</a></li>
+					<li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/admin">Admin</a></li>
 				</ul>
 			  </div>
-			</div>
+			</div><br/>
  
     {% block body %}
     {% endblock %}
- 
-	<br />
-	<br />
-	<hr />
-    <div class="row">
-			  <div class="col-md-12">
-				<p>Copyright Drabble 2013</p>
+			<br />
+			<br />
+			<hr />
+			<div class="row">
+				<div class="col-md-12">
+					<center><p>Copyright Drabble 2013</p></center>
 				</div>
 			</div>
 		</div>
