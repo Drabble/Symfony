@@ -64,13 +64,12 @@ class Article
 	/**
 	* @ORM\OneToMany(targetEntity="Portfolio\PortfolioBundle\Entity\Image", mappedBy="article")
 	*/
-	private $images;
+	private $image;
 
 	public function __construct()
 	{
 		$this->date = new \Datetime('now');
 		$this->publication = true;
-		$this->images = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->comments = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 	 
@@ -226,6 +225,15 @@ class Article
 
 	public function removeImage(\Portfolio\PortfolioBundle\Entity\Image $image)
 	{
-		$this->images->removeElement($image);
+		$this->image->removeElement($image);
+	}
+	
+	public function getImage()
+	{
+		return $this->image;
+	}
+	public function setImage()
+	{
+		return $this->image;
 	}
 }

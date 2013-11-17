@@ -29,13 +29,6 @@ class Image
     /**
      * @var string
      *
-     * @ORM\Column(name="link", type="string", length=255)
-     */
-    private $link;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="url", type="string", length=255)
      */
     private $url;
@@ -46,6 +39,8 @@ class Image
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
+	
+	private $file;
 
     /**
      * @var \DateTime
@@ -57,7 +52,6 @@ class Image
 	public function __construct()
 	{
 		$this->date = new \Datetime('now');
-		$this->url = "";
 	}
     /**
      * Get id
@@ -68,30 +62,7 @@ class Image
     {
         return $this->id;
     }
-
-    /**
-     * Set link
-     *
-     * @param string $link
-     * @return Image
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-    
-        return $this;
-    }
-
-    /**
-     * Get link
-     *
-     * @return string 
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
+	
     /**
      * Set url
      *
