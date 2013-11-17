@@ -13,8 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Image
 {
 	/**
-	* @ORM\ManyToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Article", inversedBy="images")
-	* @ORM\JoinColumn(nullable=false)
+	* @ORM\OneToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Image", cascade={"persist"})
 	*/
 	private $article;
     /**

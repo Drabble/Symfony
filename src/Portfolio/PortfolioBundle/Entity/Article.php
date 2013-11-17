@@ -62,7 +62,7 @@ class Article
 	private $comments;
 	
 	/**
-	* @ORM\OneToMany(targetEntity="Portfolio\PortfolioBundle\Entity\Image", mappedBy="article")
+	* @ORM\OneToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Image")
 	*/
 	private $image;
 
@@ -216,7 +216,7 @@ class Article
 		return $this->comments;
 	}
 
-	public function addImage(\Portfolio\PortfolioBundle\Entity\Image $image)
+	public function setImage(\Portfolio\PortfolioBundle\Entity\Image $image)
 	{
 		$this->image[] = $image;
 		$image->setArticle($this);
@@ -229,10 +229,6 @@ class Article
 	}
 	
 	public function getImage()
-	{
-		return $this->image;
-	}
-	public function setImage()
 	{
 		return $this->image;
 	}

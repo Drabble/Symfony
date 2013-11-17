@@ -26,7 +26,7 @@ class PortfolioController extends Controller
 			->add('autor',     'text')
 			->add('description',     'textarea')
 			->add('content',     'textarea')
-			->add('image', 'file')
+			->add('image',     'file')
 			->getForm();
 		
 		$request = $this->get('request');
