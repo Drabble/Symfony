@@ -154,6 +154,18 @@ class Image
         return $this->article;
     }
 	
+	public function getFile()
+	{
+		return $this->file;
+	}
+	
+	 public function setFile(Symfony\Component\HttpFoundation\File\UploadedFile $file)
+    {
+        $this->file = $file;
+    
+        return $this;
+    }
+	
 	public function upload()
 	{
 		// Si jamais il n'y a pas de fichier (champ facultatif)

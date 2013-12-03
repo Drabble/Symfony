@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Portfolio\PortfolioBundle\Entity\Article;
 use Portfolio\PortfolioBundle\Entity\Image;
 use Portfolio\PortfolioBundle\Entity\Comment;
+use Portfolio\PortfolioBundle\Form\ArticleType;
 
 class PortfolioController extends Controller
 {
@@ -21,18 +22,21 @@ class PortfolioController extends Controller
 	}
 	public function adminAction(){
 		$article = new Article();
-		$form = $this->createFormBuilder($article)
+		/*$form = $this->createFormBuilder($article)
 			->add('title',     'text')
 			->add('autor',     'text')
 			->add('description',     'textarea')
 			->add('content',     'textarea')
 			->add('image',     'file')
 			->getForm();
+		*/
+		$form = $this->createForm(new ArticleType, $article);
 		
 		$request = $this->get('request');
 		if ($request->getMethod() == 'POST') {
 			$form->bind($request);
 			if ($form->isValid()) {
+				
 				$article->getImage()->upload();
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($article);

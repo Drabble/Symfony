@@ -62,15 +62,15 @@ class Article
 	private $comments;
 	
 	/**
-	* @ORM\OneToMany(targetEntity="Portfolio\PortfolioBundle\Entity\Image", mappedBy="article")
+	* @ORM\OneToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Image", cascade={"persist"})
 	*/
-	private $images;
+	private $image;
 
 	public function __construct()
 	{
+		$this->image = new Image();
 		$this->date = new \Datetime('now');
 		$this->publication = true;
-		$this->images = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->comments = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 	 
@@ -217,7 +217,7 @@ class Article
 		return $this->comments;
 	}
 
-	public function addImage(\Portfolio\PortfolioBundle\Entity\Image $image)
+	public function setImage(\Portfolio\PortfolioBundle\Entity\Image $image)
 	{
 		$this->image[] = $image;
 		$image->setArticle($this);
@@ -226,11 +226,11 @@ class Article
 
 	public function removeImage(\Portfolio\PortfolioBundle\Entity\Image $image)
 	{
-		$this->images->removeElement($image);
+		$this->image->removeElement($image);
 	}
 	
-		public function getImages()
+	public function getImage()
 	{
-		return $this->comments;
+		return $this->image;
 	}
 }

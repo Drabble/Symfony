@@ -62,12 +62,13 @@ class Article
 	private $comments;
 	
 	/**
-	* @ORM\OneToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Image")
+	* @ORM\OneToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Image", cascade={"persist"})
 	*/
 	private $image;
 
 	public function __construct()
 	{
+		$this->image = new Image();
 		$this->date = new \Datetime('now');
 		$this->publication = true;
 		$this->comments = new \Doctrine\Common\Collections\ArrayCollection();
@@ -218,7 +219,7 @@ class Article
 
 	public function setImage(\Portfolio\PortfolioBundle\Entity\Image $image)
 	{
-		$this->image[] = $image;
+		$this->image = $image;
 		$image->setArticle($this);
 		return $this;
 	}
@@ -232,4 +233,5 @@ class Article
 	{
 		return $this->image;
 	}
+
 }
