@@ -15,7 +15,7 @@
 							<span class="col-md-6">
 								<div class="img-thumbnail">
 									<h3><a href="/Symfony/web/app_dev.php/article/{{ article.id }}" >{{ article.title }}</a></h3>
-									<a href="/Symfony/web/app_dev.php/article/{{ article.id }}"><img src="{{ asset('bundles/portfolioportfolio/pictures/Jellyfish.jpg') }}" class="img-responsive" alt="Test"></a><br/><br/>
+									<a href="/Symfony/web/app_dev.php/article/{{ article.id }}"><img src="/Symfony/web/upload/pictures/{{ article.image.title }}" class="img-responsive" alt="{{ article.image.title }}"></a><br/><br/>
 									<p>{{ article.description }}</p>
 									<p><b>Made by {{ article.autor }}</b></p>
 								</div>

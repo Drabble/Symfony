@@ -8,15 +8,15 @@
 	<div class="row">
 		<p></p>
 		<div class="col-md-12">
-			<form class="img-thumbnail col-md-10 form" name="addArticle" method="post" { form_enctype(form) }}>
-				<center><h2>New article<h2/></center><br/>
 					<div class="controls-group col-md-10">
 						<div class="controls">
-							{{ form_widget(form) }}<br/>
-							<button id="contact-submit" type="submit" class="btn btn-primary">Send</button>												
+							<form class="img-thumbnail col-md-10 form" name="addArticle" method="post"  {{ form_enctype(form) }}>
+								<center><h2>New article<h2/></center><br/>
+								{{ form_widget(form) }}<br/>
+								<button id="contact-submit" type="submit" class="btn btn-primary">Send</button>				
+							</form>
 						</div>
 					</div>
-				</form>
 				<!--<div class="upload col-md-4s">
 					<input type="file" name="files" multiple="multiple" class="form-control"><br/>
 				</div>

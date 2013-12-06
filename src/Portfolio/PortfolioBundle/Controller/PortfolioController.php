@@ -8,6 +8,7 @@ use Portfolio\PortfolioBundle\Entity\Article;
 use Portfolio\PortfolioBundle\Entity\Image;
 use Portfolio\PortfolioBundle\Entity\Comment;
 use Portfolio\PortfolioBundle\Form\ArticleType;
+use Portfolio\PortfolioBundle\Form\ImageType;
 
 class PortfolioController extends Controller
 {
@@ -36,8 +37,6 @@ class PortfolioController extends Controller
 		if ($request->getMethod() == 'POST') {
 			$form->bind($request);
 			if ($form->isValid()) {
-				
-				$article->getImage()->upload();
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($article);
 				$em->flush();
@@ -62,6 +61,7 @@ class PortfolioController extends Controller
 			"title" => $article->getTitle(),
 			"id" => $article->getId(),
 			"autor" => $article->getAutor(),
+			"image" => $article->getImage(),
 			);
 			array_push($array_articles, $array_article);
 	
@@ -75,7 +75,7 @@ class PortfolioController extends Controller
 							->getRepository('PortfolioPortfolioBundle:Article');
 							
 							
-		$article = $repository->find($id);
+		$article = $repository->find($id);	
 		if($article === null)
 		{
 			throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');

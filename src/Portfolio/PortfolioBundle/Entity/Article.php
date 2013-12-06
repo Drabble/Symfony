@@ -62,7 +62,7 @@ class Article
 	private $comments;
 	
 	/**
-	* @ORM\OneToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Image", cascade={"persist"})
+	* @ORM\OneToOne(targetEntity="Portfolio\PortfolioBundle\Entity\Image", cascade={"persist", "remove"})
 	*/
 	private $image;
 
@@ -212,11 +212,6 @@ class Article
 		$this->comments->removeElement($comment);
 	}
 
-	public function getcomments()
-	{
-		return $this->comments;
-	}
-
 	public function setImage(\Portfolio\PortfolioBundle\Entity\Image $image)
 	{
 		$this->image = $image;
@@ -234,4 +229,14 @@ class Article
 		return $this->image;
 	}
 
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
 }
