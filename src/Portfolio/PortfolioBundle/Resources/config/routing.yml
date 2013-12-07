@@ -25,3 +25,6 @@ addComment:
 getComments:
     path:     /getComments/{id}
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:getComments }
+removeArticle:
+    path:     /removeArticle/{id}
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:removeArticle }

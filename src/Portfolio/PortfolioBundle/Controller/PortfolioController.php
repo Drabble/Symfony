@@ -13,7 +13,23 @@ use Portfolio\PortfolioBundle\Form\ImageType;
 class PortfolioController extends Controller
 {
 	public function indexAction(){
-		return $this->render('PortfolioPortfolioBundle:Portfolio:index.html.twig', array("active" => "index"));
+	
+		$array_images = array();
+		$repository = $this->getDoctrine()
+						->getManager()
+						->getRepository('PortfolioPortfolioBundle:Image');
+
+		$listeImages = $repository->findBy(array(), array('id' => 'DESC'));
+ 
+		foreach($listeImages as $image)
+		{
+		  // $article est une instance de Article
+		  $array_image = array(
+			"title" => $image->getTitle(),
+			);
+			array_push($array_images, $array_image);
+		}
+		return $this->render('PortfolioPortfolioBundle:Portfolio:index.html.twig', array('images' => $array_images, "active" => "index"));
 	}
 	public function studiesAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:studies.html.twig', array("active" => "studies"));
@@ -102,6 +118,24 @@ class PortfolioController extends Controller
 		return $this->render('PortfolioPortfolioBundle:Portfolio:article.html.twig', array(
 		'article' => $article, "active" => "article", 'form' => $form->createView()
 		));
+	}
+	public function removeArticleAction($id)
+	{
+		$repository = $this->getDoctrine()
+							->getManager()
+							->getRepository('PortfolioPortfolioBundle:Article');
+							
+							
+		$article = $repository->find($id);	
+		if($article === null)
+		{
+			throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
+		}
+		
+		$em = $this->getDoctrine()->getManager();
+		$em->remove($article);
+		$em->flush();
+		return $this->articlesAction();
 	}
 }
 ?>

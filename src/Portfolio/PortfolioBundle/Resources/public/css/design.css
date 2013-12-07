@@ -30,7 +30,7 @@ z-index: 10;
 .widget .action { margin-top:5px; }
 .widget .comment-text { font-size: 14px; }
 .widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
-.form { margin-bottom: 10px; }
+.form { margin-bottom: 10px; padding: 20px;}
 .upload{
 float: right;
 }

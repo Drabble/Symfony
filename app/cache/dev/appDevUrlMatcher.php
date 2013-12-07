@@ -224,6 +224,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'getComments')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::getCommentsAction',));
         }
 
+        // removeArticle
+        if (0 === strpos($pathinfo, '/removeArticle') && preg_match('#^/removeArticle/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeArticle')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::removeArticleAction',));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
