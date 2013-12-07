@@ -9,8 +9,14 @@ body {
 	padding: 10px;
 	margin-bottom: 20px;
 }
+#article_image figure{
+position: relative;
+margin: 0 auto;
+}
 #article_image img{
 z-index: 10;
+max-width: 100%;
+    vertical-align: middle;
 }
 #article_image figcaption {
     color: black;
@@ -20,6 +26,7 @@ z-index: 10;
 	text-align: left;
 	padding-left: 10px;
 }
+
 .widget .panel-body { padding:0px; }
 .widget .list-group { margin-bottom: 0; }
 .widget .panel-title { display:inline }
@@ -30,13 +37,16 @@ z-index: 10;
 .widget .action { margin-top:5px; }
 .widget .comment-text { font-size: 14px; }
 .widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
-.form { margin-bottom: 10px; }
+.form { margin-bottom: 10px; padding: 20px;}
 .upload{
 float: right;
 }
 #title {font-weight:bold;}
 a{
 	color: black;
+}
+#search:hover{
+	color: #428BCA;
 }
 hr{
 	border-top: 1px solid #ccc;

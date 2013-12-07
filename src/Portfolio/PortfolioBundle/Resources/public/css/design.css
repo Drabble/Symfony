@@ -45,6 +45,9 @@ float: right;
 a{
 	color: black;
 }
+#search:hover{
+	color: #428BCA;
+}
 hr{
 	border-top: 1px solid #ccc;
 }

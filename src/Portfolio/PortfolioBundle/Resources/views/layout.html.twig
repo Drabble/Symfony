@@ -26,9 +26,9 @@
 					<br/>
 					<form class="navbar-form" role="search">
 					  <div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+						<input type="text" class="form-control" placeholder="Search" name="search-term" id="search-term">
 						<div class="input-group-btn">
-						  <button class="btn btn-default" type="submit"><span class="glyphicon icon-search"></span></button>
+						  <button  id="search"  class="btn btn-default" type="submit"><span class="glyphicon icon-search"></span></button>
 						</div>
 					  </div>
 					</form>
@@ -54,7 +54,7 @@
 					<li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/contact">Contact</a></li>
 					<li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/admin">Admin</a></li>
 					<li id="menu" {% if active == "chat" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/chat">Chat</a></li>
-					<li class="dropdown">
+					<li id="menu" {% if active == "login" %} class="active_page dropdown"{% endif%}>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
 						<ul class="dropdown-menu unstyled pull-left dropdown-features">
 							<div class="panel panel-default">
