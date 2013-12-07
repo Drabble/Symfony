@@ -201,12 +201,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::contactAction',  '_route' => 'Contact',);
         }
 
-        if (0 === strpos($pathinfo, '/a')) {
-            // Admin
-            if ($pathinfo === '/admin') {
-                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::adminAction',  '_route' => 'Admin',);
-            }
+        // Admin
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::adminAction',  '_route' => 'Admin',);
+        }
 
+        // Chat
+        if ($pathinfo === '/chat') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::chatAction',  '_route' => 'Chat',);
+        }
+
+        // Login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::loginAction',  '_route' => 'Login',);
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
             // Article
             if (0 === strpos($pathinfo, '/article') && preg_match('#^/article/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'Article')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::articleAction',));

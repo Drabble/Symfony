@@ -34,6 +34,12 @@ class PortfolioController extends Controller
 	public function studiesAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:studies.html.twig', array("active" => "studies"));
 	}
+	public function chatAction(){
+		return $this->render('PortfolioPortfolioBundle:Portfolio:chat.html.twig', array("active" => "chat"));
+	}
+	public function loginAction(){
+		return $this->render('PortfolioPortfolioBundle:Portfolio:login.html.twig', array("active" => "login"));
+	}
 	public function contactAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:contact.html.twig', array("active" => "contact"));
 	}

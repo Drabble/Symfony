@@ -9,8 +9,14 @@ body {
 	padding: 10px;
 	margin-bottom: 20px;
 }
+#article_image figure{
+position: relative;
+margin: 0 auto;
+}
 #article_image img{
 z-index: 10;
+max-width: 100%;
+    vertical-align: middle;
 }
 #article_image figcaption {
     color: black;
@@ -20,6 +26,7 @@ z-index: 10;
 	text-align: left;
 	padding-left: 10px;
 }
+
 .widget .panel-body { padding:0px; }
 .widget .list-group { margin-bottom: 0; }
 .widget .panel-title { display:inline }
