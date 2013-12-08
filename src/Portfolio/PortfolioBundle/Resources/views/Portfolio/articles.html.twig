@@ -5,26 +5,27 @@
 {% endblock %}
 
 {% block body %}
-	<div class="row">
-		<div class="col-md-12 img-thumbnail">
-			<center><h2>Articles</h2></center><br/>
-			<ul class="pagination" id="pagination"></ul>
-					{% for key,article in articles %}
-						{% if key % 10 == 0 %}{% if key != 0 %}</span>{% endif %}<span class="article-group" id={{ key|number_format / 10 }}>{% endif %}
-						{% if key % 2 == 0  %}{% if key != 0 %}</div>{% endif %}<div class="row">{% endif %}
-						<span class="col-md-6">
-							<div class="img-thumbnail">
-								<h3><a href="/Symfony/web/app_dev.php/article/{{ article.id }}" >{{ article.title }}</a></h3>
-								<a href="/Symfony/web/app_dev.php/article/{{ article.id }}"><img src="/Symfony/web/upload/pictures/{{ article.image.title }}" class="img-responsive" alt="{{ article.image.title }}"></a><br/><br/>
-								<p>{{ article.description }}</p>
-								<p><b>Made by {{ article.autor }}</b></p>
-							</div>
-						</span>
-					{% endfor %}
-				</div>
-			</span>
-			<ul class="pagination"></ul>
+		<div class="col-md-12">
+			<div class="col-md-12 img-thumbnail">
+				<center><h2>Articles</h2></center><br/>
+					<ul class="pagination" id="pagination">
+					</ul>
+						{% for key,article in articles %}
+							{% if key % 10 == 0 %}{% if key != 0 %}</div></span>{% endif %}<span class="article-group" id={{ key|number_format / 10 }}>{% endif %}
+							{% if key % 2 == 0  %}{% if key != 0 and key % 10 != 0 %}</div>{% endif %}<div class="row">{% endif %}
+							<span class="col-md-6">
+								<div class="img-thumbnail">
+									<h3><a href="/Symfony/web/app_dev.php/article/{{ article.id }}" >{{ article.title }}</a></h3>
+									<a href="/Symfony/web/app_dev.php/article/{{ article.id }}"><img src="/Symfony/web/upload/pictures/{{ article.image.title }}" class="img-responsive" alt="{{ article.image.title }}"></a><br/><br/>
+									<p>{{ article.description }}</p>
+									<p><b>Made by {{ article.autor }}</b></p>
+								</div>
+							</span>
+						{% endfor %}
+					</div>
+				</span>
+				<ul class="pagination">
+				</ul>
+			</div>
 		</div>
-	</div>
-	
 {% endblock %}

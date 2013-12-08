@@ -39,72 +39,73 @@ class __TwigTemplate_287cd83be5f93c613bd1658de50bde044761049103571c42913f19fc24f
     public function block_body($context, array $blocks = array())
     {
         // line 8
-        echo "\t<div class=\"row\">
-\t\t<div class=\"col-md-12 img-thumbnail\">
-\t\t\t<center><h2>Articles</h2></center><br/>
-\t\t\t<ul class=\"pagination\" id=\"pagination\"></ul>
-\t\t\t\t\t";
-        // line 12
+        echo "\t\t<div class=\"col-md-12\">
+\t\t\t<div class=\"col-md-12 img-thumbnail\">
+\t\t\t\t<center><h2>Articles</h2></center><br/>
+\t\t\t\t\t<ul class=\"pagination\" id=\"pagination\">
+\t\t\t\t\t</ul>
+\t\t\t\t\t\t";
+        // line 13
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) ? $context["articles"] : $this->getContext($context, "articles")));
         foreach ($context['_seq'] as $context["key"] => $context["article"]) {
-            // line 13
-            echo "\t\t\t\t\t\t";
+            // line 14
+            echo "\t\t\t\t\t\t\t";
             if ((((isset($context["key"]) ? $context["key"] : $this->getContext($context, "key")) % 10) == 0)) {
                 if (((isset($context["key"]) ? $context["key"] : $this->getContext($context, "key")) != 0)) {
-                    echo "</span>";
+                    echo "</div></span>";
                 }
                 echo "<span class=\"article-group\" id=";
                 echo twig_escape_filter($this->env, (twig_number_format_filter($this->env, (isset($context["key"]) ? $context["key"] : $this->getContext($context, "key"))) / 10), "html", null, true);
                 echo ">";
             }
-            // line 14
-            echo "\t\t\t\t\t\t";
+            // line 15
+            echo "\t\t\t\t\t\t\t";
             if ((((isset($context["key"]) ? $context["key"] : $this->getContext($context, "key")) % 2) == 0)) {
-                if (((isset($context["key"]) ? $context["key"] : $this->getContext($context, "key")) != 0)) {
+                if ((((isset($context["key"]) ? $context["key"] : $this->getContext($context, "key")) != 0) && (((isset($context["key"]) ? $context["key"] : $this->getContext($context, "key")) % 10) != 0))) {
                     echo "</div>";
                 }
                 echo "<div class=\"row\">";
             }
-            // line 15
-            echo "\t\t\t\t\t\t<span class=\"col-md-6\">
-\t\t\t\t\t\t\t<div class=\"img-thumbnail\">
-\t\t\t\t\t\t\t\t<h3><a href=\"/Symfony/web/app_dev.php/article/";
-            // line 17
+            // line 16
+            echo "\t\t\t\t\t\t\t<span class=\"col-md-6\">
+\t\t\t\t\t\t\t\t<div class=\"img-thumbnail\">
+\t\t\t\t\t\t\t\t\t<h3><a href=\"/Symfony/web/app_dev.php/article/";
+            // line 18
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id"), "html", null, true);
             echo "\" >";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "title"), "html", null, true);
             echo "</a></h3>
-\t\t\t\t\t\t\t\t<a href=\"/Symfony/web/app_dev.php/article/";
-            // line 18
+\t\t\t\t\t\t\t\t\t<a href=\"/Symfony/web/app_dev.php/article/";
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id"), "html", null, true);
             echo "\"><img src=\"/Symfony/web/upload/pictures/";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "image"), "title"), "html", null, true);
             echo "\" class=\"img-responsive\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "image"), "title"), "html", null, true);
             echo "\"></a><br/><br/>
-\t\t\t\t\t\t\t\t<p>";
-            // line 19
+\t\t\t\t\t\t\t\t\t<p>";
+            // line 20
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "description"), "html", null, true);
             echo "</p>
-\t\t\t\t\t\t\t\t<p><b>Made by ";
-            // line 20
+\t\t\t\t\t\t\t\t\t<p><b>Made by ";
+            // line 21
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "autor"), "html", null, true);
             echo "</b></p>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</span>
-\t\t\t\t\t";
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
-        echo "\t\t\t\t</div>
-\t\t\t</span>
-\t\t\t<ul class=\"pagination\"></ul>
+        // line 25
+        echo "\t\t\t\t\t</div>
+\t\t\t\t</span>
+\t\t\t\t<ul class=\"pagination\">
+\t\t\t\t</ul>
+\t\t\t</div>
 \t\t</div>
-\t</div>
-\t
 ";
     }
 
@@ -120,6 +121,6 @@ class __TwigTemplate_287cd83be5f93c613bd1658de50bde044761049103571c42913f19fc24f
 
     public function getDebugInfo()
     {
-        return array (  102 => 24,  92 => 20,  88 => 19,  80 => 18,  74 => 17,  70 => 15,  62 => 14,  52 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  103 => 25,  93 => 21,  89 => 20,  81 => 19,  75 => 18,  71 => 16,  63 => 15,  53 => 14,  49 => 13,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }
