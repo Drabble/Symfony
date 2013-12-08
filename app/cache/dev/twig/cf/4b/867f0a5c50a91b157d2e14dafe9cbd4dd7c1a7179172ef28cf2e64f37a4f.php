@@ -42,9 +42,9 @@ class __TwigTemplate_cf4b867f0a5c50a91b157d2e14dafe9cbd4dd7c1a7179172ef28cf2e64f
         echo "\t<div class=\"row\">
 \t\t<p></p>
 \t\t<div class=\"col-md-12\">
-\t\t\t\t\t<div class=\"controls-group col-md-10\">
+\t\t\t\t\t<div class=\"controls-group col-md-8 col-md-offset-2  img-thumbnail\">
 \t\t\t\t\t\t<div class=\"controls\">
-\t\t\t\t\t\t\t<form class=\"img-thumbnail col-md-10 form\" name=\"addArticle\" method=\"post\"  ";
+\t\t\t\t\t\t\t<form class=\"col-md-10 form\" name=\"addArticle\" method=\"post\"  ";
         // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo ">

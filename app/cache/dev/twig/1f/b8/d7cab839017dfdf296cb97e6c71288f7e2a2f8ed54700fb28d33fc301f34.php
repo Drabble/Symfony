@@ -41,7 +41,7 @@ class __TwigTemplate_1fb8d7cab839017dfdf296cb97e6c71288f7e2a2f8ed54700fb28d33fc3
         // line 8
         echo "\t<div class=\"row\">
 \t\t<div class=\"col-md-12\">
-\t\t\t<center>
+\t\t\t<div class=\"col-md-10 col-md-offset-1 img-thumbnail\">
 \t\t\t\t<center><h2>Contact</h2></center>
 \t\t\t\t<p>\t<br />
 \t\t\t\t<b>Deep<br />
@@ -55,7 +55,7 @@ class __TwigTemplate_1fb8d7cab839017dfdf296cb97e6c71288f7e2a2f8ed54700fb28d33fc3
 \t\t\t\tF +44 (0)20 7593 0556<br />
 \t\t\t\t<br />
 \t\t\t\tFor new business enquiries please contact talktous@deep.co.uk<br /></p>
-\t\t\t</center>
+\t\t\t</div>
 \t\t</div>
 \t</div>
 ";

@@ -122,7 +122,7 @@ class PortfolioController extends Controller
 		}
 		
 		return $this->render('PortfolioPortfolioBundle:Portfolio:article.html.twig', array(
-		'article' => $article, "active" => "article", 'form' => $form->createView()
+		'article' => $article, "active" => "articles", 'form' => $form->createView()
 		));
 	}
 	public function removeArticleAction($id)

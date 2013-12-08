@@ -45,7 +45,7 @@ float: right;
 a{
 	color: black;
 }
-#search:hover{
+.blue:hover{
 	color: #428BCA;
 }
 hr{

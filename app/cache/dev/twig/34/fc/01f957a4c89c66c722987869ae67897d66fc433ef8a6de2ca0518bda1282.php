@@ -71,7 +71,7 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t\t\t  <div class=\"input-group\">
 \t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"search-term\" id=\"search-term\">
 \t\t\t\t\t\t<div class=\"input-group-btn\">
-\t\t\t\t\t\t  <button  id=\"search\"  class=\"btn btn-default\" type=\"submit\"><span class=\"glyphicon icon-search\"></span></button>
+\t\t\t\t\t\t  <button  class=\"btn btn-default blue\" type=\"submit\"><span class=\"glyphicon icon-search\"></span></button>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t  </div>
 \t\t\t\t\t</form>
@@ -79,11 +79,11 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t  <div class=\"col-md-2\">
 \t\t\t\t<br /><br/>
 \t\t\t\t<p class=\"pull-right\">
-\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Twitter\" class=\"icon-twitter\"></i></a>
-\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Facebook\" class=\"icon-facebook\"></i></a>
-\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Youtube\" class=\"icon-youtube\"></i></a>\t\t\t\t\t
-\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Google plus\" class=\"icon-google-plus\"></i></a>
-\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Pinterest\" class=\"icon-pinterest\"></i></a>                
+\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Twitter\" class=\"icon-twitter blue\"></i></a>
+\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Facebook\" class=\"icon-facebook blue\"></i></a>
+\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Youtube\" class=\"icon-youtube blue\"></i></a>\t\t\t\t\t
+\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Google plus\" class=\"icon-google-plus blue\"></i></a>
+\t\t\t\t\t<a href=\"#\"><i rel=\"tooltip\" data-original-title=\"Pinterest\" class=\"icon-pinterest blue\"></i></a>                
 \t\t\t\t</p>
 \t\t\t  </div>
 \t\t\t</div>
@@ -141,21 +141,22 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"panel-body\">
 \t\t\t\t\t\t\t\t\t<form accept-charset=\"UTF-8\" role=\"form\">
-\t\t\t\t\t\t\t\t\t<fieldset>
-\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"E-mail\" name=\"email\" type=\"text\">
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"Password\" name=\"password\" type=\"password\" value=\"\">
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox\">
-\t\t\t\t\t\t\t\t\t\t\t<label>
-\t\t\t\t\t\t\t\t\t\t\t\t<input name=\"remember\" type=\"checkbox\" value=\"Remember Me\"> Remember Me
-\t\t\t\t\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<input class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" value=\"Login\">
-\t\t\t\t\t\t\t\t\t</fieldset>
-\t\t\t\t\t\t\t\t\t</form>
+\t\t\t\t\t\t\t\t\t\t\t<fieldset>
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"E-mail\" name=\"email\" type=\"text\">
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"Password\" name=\"password\" type=\"password\" value=\"\">
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<label>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input name=\"remember\" type=\"checkbox\" value=\"Remember Me\"> Remember Me
+\t\t\t\t\t\t\t\t\t\t\t\t\t</label>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" value=\"Login\"><br/>
+\t\t\t\t\t\t\t\t\t\t\t\t<center><a href=\"/Symfony/web/app_dev.php/login\"><input class=\"btn btn-lg btn-info btn-block type=\"submit\" value=\"Register\"></a></center>
+\t\t\t\t\t\t\t\t\t\t\t</fieldset>
+\t\t\t\t\t\t\t\t\t\t</form>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</ul>
@@ -165,9 +166,9 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t</div><br/>
  
     ";
-        // line 89
+        // line 90
         $this->displayBlock('body', $context, $blocks);
-        // line 91
+        // line 92
         echo "\t\t\t<br />
 \t\t\t<br />
 \t\t\t<hr />
@@ -181,10 +182,10 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 </html>";
     }
 
-    // line 89
+    // line 90
     public function block_body($context, array $blocks = array())
     {
-        // line 90
+        // line 91
         echo "    ";
     }
 
@@ -200,6 +201,6 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 
     public function getDebugInfo()
     {
-        return array (  188 => 90,  185 => 89,  171 => 91,  169 => 89,  132 => 57,  126 => 56,  120 => 55,  114 => 54,  108 => 53,  102 => 52,  96 => 51,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
+        return array (  189 => 91,  186 => 90,  172 => 92,  170 => 90,  132 => 57,  126 => 56,  120 => 55,  114 => 54,  108 => 53,  102 => 52,  96 => 51,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }

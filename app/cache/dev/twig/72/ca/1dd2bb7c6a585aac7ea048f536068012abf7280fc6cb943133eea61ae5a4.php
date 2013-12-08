@@ -41,19 +41,21 @@ class __TwigTemplate_72ca1dd2bb7c6a585aac7ea048f536068012abf7280fc6cb943133eea61
         // line 8
         echo "\t<div class=\"row\">
 \t  <div class=\"col-md-12\">
-\t\t<center><h2>Studies</h2></center>
-\t\t<p>
-\t\t\t<ul>
-\t\t\t\t<li><b>Senior Designer</b><br/>
-\t\t\t\tHoller Sydney, Australia<br/></li>
-\t\t\t\t<li><b>Designer</b><br/>
-\t\t\t\tHoller Sydney, Australia<br/></li>
-\t\t\t\t<li><b>Illustrator & Designer</b><br/>
-\t\t\t\tReborn Sydney, Australia<br/></li>
-\t\t\t\t<li><b>Illustrator, Designer and Animator</b><br/>
-\t\t\t\tCyberdesign Works Sydney, Australia</li>
-\t\t\t</ul>
-\t\t</p>
+\t\t<div class=\"col-md-10 col-md-offset-1 img-thumbnail\">
+\t\t\t<center><h2>Studies</h2></center>
+\t\t\t<p>
+\t\t\t\t<ul>
+\t\t\t\t\t<li><b>Senior Designer</b><br/>
+\t\t\t\t\tHoller Sydney, Australia<br/></li>
+\t\t\t\t\t<li><b>Designer</b><br/>
+\t\t\t\t\tHoller Sydney, Australia<br/></li>
+\t\t\t\t\t<li><b>Illustrator & Designer</b><br/>
+\t\t\t\t\tReborn Sydney, Australia<br/></li>
+\t\t\t\t\t<li><b>Illustrator, Designer and Animator</b><br/>
+\t\t\t\t\tCyberdesign Works Sydney, Australia</li>
+\t\t\t\t</ul>
+\t\t\t</p>
+\t\t</div>
 \t  </div>
 \t</div>
 ";
