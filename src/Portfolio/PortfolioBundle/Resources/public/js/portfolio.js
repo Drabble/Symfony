@@ -15,13 +15,13 @@ $(function (){
 	$("textarea").each(function(){
 		$(this).val("");
 		$(this).addClass("form-control");
-		$(this).attr("rows","6");
-		$(this).attr("placeholder","Add a comment");
 	});
 	$(".form input").each(function(){
+		$(this).val("");
 		$(this).addClass("form-control");
-		$(this).attr("placeholder","Add a comment");
 	});
+	$(".comment-text textarea").attr("placeholder","Add a comment");
+	$(".comment-text textarea").attr("rows","6");
 	$(".comment-group").hide();
 	$(".comment-group").first().show();
 	if($(".comment-group").length > 1) {
