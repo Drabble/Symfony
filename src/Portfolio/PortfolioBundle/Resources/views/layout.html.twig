@@ -46,45 +46,56 @@
 			</div>
 			<hr />
 			<div class="row">
-			  <div class="col-md-6">
-				<ul class="nav nav-tabs">
-					<li id="menu" {% if active == "index" %}class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/">Home</a></li>
-					<li id="menu" {% if active == "studies" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/studies">Studies</a></li>
-					<li id="menu" {% if active == "articles" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/articles">Articles</a></li>
-					<li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/contact">Contact</a></li>
-					<li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/admin">Admin</a></li>
-					<li id="menu" {% if active == "chat" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/chat">Chat</a></li>
-					<li id="menu" {% if active == "login" %} class="active_page dropdown"{% endif%}>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
-						<ul class="dropdown-menu unstyled pull-left dropdown-features">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<a href="/Symfony/web/app_dev.php/login"><h3 class="panel-title">Please sign in</h3></a>
-								</div>
-								<div class="panel-body">
-									<form accept-charset="UTF-8" role="form">
-											<fieldset>
-												<div class="form-group">
-													<input class="form-control" placeholder="E-mail" name="email" type="text">
-												</div>
-												<div class="form-group">
-													<input class="form-control" placeholder="Password" name="password" type="password" value="">
-												</div>
-												<div class="checkbox">
-													<label>
-														<input name="remember" type="checkbox" value="Remember Me"> Remember Me
-													</label>
-												</div>
-												<input class="btn btn-lg btn-primary btn-block" type="submit" value="Login"><br/>
-												<center><a href="/Symfony/web/app_dev.php/login"><input class="btn btn-lg btn-info btn-block type="submit" value="Register"></a></center>
-											</fieldset>
-										</form>
-								</div>
-							</div>
-						</ul>
-					</li>
-				</ul>
-			  </div>
+				<div class="col-md-6">
+					<ul class="nav nav-tabs">
+						<li id="menu" {% if active == "index" %}class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/">Home</a></li>
+						<li id="menu" {% if active == "studies" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/studies">Studies</a></li>
+						<li id="menu" {% if active == "articles" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/articles">Articles</a></li>
+						<li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/contact">Contact</a></li>
+						<li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/admin">Admin</a></li>
+						<li id="menu" {% if active == "chat" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/chat">Chat</a></li>
+						{% if app.user %}
+							<li id="menu" {% if active == "login" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/account">Account</a></li>
+						{% else %}
+							<li id="menu" {% if active == "login" %} class="active_page dropdown"{% else %}class="dropdown"{% endif%}>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
+								<ul class="dropdown-menu unstyled pull-left dropdown-features">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<a href="/Symfony/web/app_dev.php/login"><h3 class="panel-title">Please sign in</h3></a>
+										</div>
+										<div class="panel-body">
+											<form action="{{ path('login_check') }}" method="post">
+													<fieldset>
+														<div class="form-group">
+															<input class="form-control" placeholder="Username" type="text" id="username" name="_username"/>
+														</div>
+														<div class="form-group">
+															<input class="form-control" placeholder="Password" name="_password" type="password" value="">
+														</div>
+														<div class="checkbox">
+															<label>
+																<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+															</label>
+														</div>
+														<input class="btn btn-lg btn-primary btn-block" type="submit" value="Login"><br/>
+														<center><a href="/Symfony/web/app_dev.php/login"><input class="btn btn-lg btn-info btn-block type="submit" value="Register"></a></center>
+													</fieldset>
+												</form>
+										</div>
+									</div>
+								</ul>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
+				<div class="col-md-3 pull-right">
+					<ul class="nav">
+					{% if app.user %}
+						<li id="menu" class="pull-right"><a href="/Symfony/web/app_dev.php/logout">logout</a></li>
+					{% endif %}
+					</ul>
+				</div>
 			</div><br/>
  
     {% block body %}

@@ -19,9 +19,6 @@ Admin:
 Chat:
     path:     /chat
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:chat }
-Login:
-    path:     /login
-    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:login }
 Article:
     path:     /article/{id}
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:article }

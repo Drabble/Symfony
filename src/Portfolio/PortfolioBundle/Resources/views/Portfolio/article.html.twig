@@ -13,8 +13,8 @@
 			<p>Created by <b>{{ article.autor }}</b> the <b>{{ article.date|date('d.m.Y') }}</b> at {{ article.date|date('H:i:s') }}</p><br/>
 			<div class="panel panel-default widget">
 				<div class="panel-heading">
-					{% if article.comments is empty %}<h3 class="panel-title">Recent Comments</h3>
-					{% else %}<h3 class="panel-title">No Comments</h3>{% endif %}
+					{% if article.comments is empty %}<h3 class="panel-title">No Comments</h3>
+					{% else %}<h3 class="panel-title">Recent Comments</h3>{% endif %}
 				</div>
 				<div class="panel-body">
 					<ul class="list-group">
