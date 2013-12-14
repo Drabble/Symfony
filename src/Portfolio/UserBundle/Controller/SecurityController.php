@@ -3,7 +3,10 @@
 namespace Portfolio\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
+use Portfolio\UserBundle\Entity\user;
+use Portfolio\UserBundle\Form\UserType;
 
 class SecurityController extends Controller
 {
@@ -25,11 +28,26 @@ class SecurityController extends Controller
       $session->remove(SecurityContext::AUTHENTICATION_ERROR);
     }
 
+	
+	$user = new User();
+	$form = $this->createForm(new UserType, $user);
+	$request = $this->get('request');
+	if ($request->getMethod() == 'POST') {
+		$form->bind($request);
+		if ($form->isValid()) {
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($user);
+			$em->flush();
+		}
+	}
+	
+	
     return $this->render('PortfolioPortfolioBundle:Portfolio:login.html.twig', array(
       // Valeur du précédent nom d'utilisateur entré par l'internaute
       'last_username' => $session->get(SecurityContext::LAST_USERNAME),
       'error'         => $error,
 	  'active'        => 'login',
+	  'form' => $form->createView()
     ));
   }
 }

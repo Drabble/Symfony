@@ -93,46 +93,77 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t\t\t<ul class=\"nav nav-tabs\">
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 51
+<<<<<<< HEAD
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "index")) {
+=======
+        if (($this->getContext($context, "active") == "index")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo "class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/\">Home</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 52
+<<<<<<< HEAD
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "studies")) {
+=======
+        if (($this->getContext($context, "active") == "studies")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/studies\">Studies</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 53
+<<<<<<< HEAD
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "articles")) {
+=======
+        if (($this->getContext($context, "active") == "articles")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/articles\">Articles</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 54
+<<<<<<< HEAD
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "contact")) {
+=======
+        if (($this->getContext($context, "active") == "contact")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/contact\">Contact</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 55
+<<<<<<< HEAD
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "admin")) {
+=======
+        if (($this->getContext($context, "active") == "admin")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/admin\">Admin</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 56
+<<<<<<< HEAD
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "chat")) {
+=======
+        if (($this->getContext($context, "active") == "chat")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo " class=\"active_page\"";
         }
         echo "><a href=\"/Symfony/web/app_dev.php/chat\">Chat</a></li>
 \t\t\t\t\t\t";
         // line 57
+<<<<<<< HEAD
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user")) {
             // line 58
             echo "\t\t\t\t\t\t\t<li id=\"menu\" ";
             if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "login")) {
+=======
+        if ($this->getAttribute($this->getContext($context, "app"), "user")) {
+            // line 58
+            echo "\t\t\t\t\t\t\t<li id=\"menu\" ";
+            if (($this->getContext($context, "active") == "login")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
                 echo " class=\"active_page\"";
             }
             echo "><a href=\"/Symfony/web/app_dev.php/account\">Account</a></li>
@@ -140,7 +171,11 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
         } else {
             // line 60
             echo "\t\t\t\t\t\t\t<li id=\"menu\" ";
+<<<<<<< HEAD
             if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "login")) {
+=======
+            if (($this->getContext($context, "active") == "login")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
                 echo " class=\"active_page dropdown\"";
             } else {
                 echo "class=\"dropdown\"";
@@ -186,7 +221,11 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t\t\t<ul class=\"nav\">
 \t\t\t\t\t";
         // line 94
+<<<<<<< HEAD
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user")) {
+=======
+        if ($this->getAttribute($this->getContext($context, "app"), "user")) {
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             // line 95
             echo "\t\t\t\t\t\t<li id=\"menu\" class=\"pull-right\"><a href=\"/Symfony/web/app_dev.php/logout\">logout</a></li>
 \t\t\t\t\t";
@@ -232,6 +271,10 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  220 => 102,  217 => 101,  203 => 103,  201 => 101,  195 => 97,  191 => 95,  189 => 94,  183 => 90,  158 => 68,  142 => 60,  134 => 58,  132 => 57,  126 => 56,  120 => 55,  114 => 54,  108 => 53,  102 => 52,  96 => 51,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  63 => 15,  52 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
+=======
+        return array (  220 => 102,  217 => 101,  203 => 103,  201 => 101,  195 => 97,  191 => 95,  189 => 94,  183 => 90,  158 => 68,  142 => 60,  134 => 58,  132 => 57,  126 => 56,  120 => 55,  114 => 54,  108 => 53,  102 => 52,  96 => 51,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  100 => 48,  95 => 46,  69 => 23,  66 => 22,  60 => 20,  58 => 19,  53 => 17,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
     }
 }

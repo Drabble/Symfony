@@ -377,6 +377,21 @@ session_name($name);
 }
 }
 }
+<<<<<<< HEAD
+=======
+namespace
+{
+interface SessionHandlerInterface
+{
+public function open($savePath, $sessionName);
+public function close();
+public function read($sessionId);
+public function write($sessionId, $data);
+public function destroy($sessionId);
+public function gc($lifetime);
+}
+}
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
 namespace Symfony\Component\HttpFoundation\Session\Storage\Proxy
 {
 class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterface
@@ -2295,6 +2310,39 @@ return array($controller, $method);
 }
 namespace Symfony\Component\Security\Http
 {
+<<<<<<< HEAD
+=======
+use Symfony\Component\HttpFoundation\Request;
+interface AccessMapInterface
+{
+public function getPatterns(Request $request);
+}
+}
+namespace Symfony\Component\Security\Http
+{
+use Symfony\Component\HttpFoundation\RequestMatcherInterface;
+use Symfony\Component\HttpFoundation\Request;
+class AccessMap implements AccessMapInterface
+{
+private $map = array();
+public function add(RequestMatcherInterface $requestMatcher, array $roles = array(), $channel = null)
+{
+$this->map[] = array($requestMatcher, $roles, $channel);
+}
+public function getPatterns(Request $request)
+{
+foreach ($this->map as $elements) {
+if (null === $elements[0] || $elements[0]->matches($request)) {
+return array($elements[1], $elements[2]);
+}
+}
+return array(null, null);
+}
+}
+}
+namespace Symfony\Component\Security\Http
+{
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;

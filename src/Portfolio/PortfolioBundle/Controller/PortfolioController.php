@@ -37,27 +37,17 @@ class PortfolioController extends Controller
 	public function chatAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:chat.html.twig', array("active" => "chat"));
 	}
-	public function loginAction(){
-		return $this->render('PortfolioPortfolioBundle:Portfolio:login.html.twig', array("active" => "login"));
-	}
 	public function contactAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:contact.html.twig', array("active" => "contact"));
 	}
 	public function adminAction(){
 		$article = new Article();
-		/*$form = $this->createFormBuilder($article)
-			->add('title',     'text')
-			->add('autor',     'text')
-			->add('description',     'textarea')
-			->add('content',     'textarea')
-			->add('image',     'file')
-			->getForm();
-		*/
 		$form = $this->createForm(new ArticleType, $article);
 		
 		$request = $this->get('request');
 		if ($request->getMethod() == 'POST') {
 			$form->bind($request);
+			echo $form;
 			if ($form->isValid()) {
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($article);

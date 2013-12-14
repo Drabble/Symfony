@@ -399,7 +399,11 @@
     <parameter key="assetic.read_from">C:/wamp/www/Symfony/app/../web</parameter>
     <parameter key="assetic.write_to">C:/wamp/www/Symfony/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
+<<<<<<< HEAD
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
+=======
+    <parameter key="assetic.java.bin">C:\Program Files\Java\jdk1.6.0_45\bin\java.EXE</parameter>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
@@ -1531,7 +1535,11 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
+<<<<<<< HEAD
             <argument type="service" id="security.user.provider.concrete.in_memory"/>
+=======
+            <argument type="service" id="security.user.provider.concrete.main"/>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             <argument type="service">
               <service class="Symfony\Component\Security\Core\User\UserChecker" public="false"/>
             </argument>
@@ -1542,7 +1550,11 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+<<<<<<< HEAD
             <argument>52a9fe82ddaba</argument>
+=======
+            <argument>52aad75d13b52</argument>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
           </service>
         </argument>
       </argument>
@@ -1593,11 +1605,14 @@
         <service class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
           <argument type="service" id="service_container"/>
           <argument type="collection">
+<<<<<<< HEAD
             <argument key="security.firewall.map.context.dev" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
                 <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
               </service>
             </argument>
+=======
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             <argument key="security.firewall.map.context.main" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
                 <argument>^/</argument>
@@ -1637,6 +1652,7 @@
       <tag name="templating.helper" alias="security"/>
       <argument type="service" id="security.context" on-invalid="ignore"/>
     </service>
+<<<<<<< HEAD
     <service id="security.user.provider.concrete.in_memory" class="Symfony\Component\Security\Core\User\InMemoryUserProvider" public="false">
       <call method="createUser">
         <argument type="service">
@@ -1663,6 +1679,12 @@
     </service>
     <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection"/>
+=======
+    <service id="security.user.provider.concrete.main" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
+      <argument type="service" id="doctrine"/>
+      <argument>Portfolio\UserBundle\Entity\User</argument>
+      <argument>username</argument>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
       <argument>null</argument>
     </service>
     <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
@@ -1671,7 +1693,34 @@
           <service class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
             <tag name="monolog.logger" channel="security"/>
             <argument type="service">
+<<<<<<< HEAD
               <service class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+=======
+              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/admin</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+              </service>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             </argument>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint" public="false">
@@ -1686,7 +1735,11 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.context"/>
             <argument type="collection">
+<<<<<<< HEAD
               <argument type="service" id="security.user.provider.concrete.in_memory"/>
+=======
+              <argument type="service" id="security.user.provider.concrete.main"/>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             </argument>
             <argument>main</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -1727,7 +1780,11 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
+<<<<<<< HEAD
             <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.in_memory"/>
+=======
+            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.main"/>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             <argument type="service" id="security.context"/>
             <argument type="service" id="security.authentication.manager"/>
             <argument type="service">
@@ -1797,7 +1854,11 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
+<<<<<<< HEAD
             <argument>52a9fe82ddaba</argument>
+=======
+            <argument>52aad75d13b52</argument>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -1807,7 +1868,34 @@
             <argument type="service" id="security.context"/>
             <argument type="service" id="security.access.decision_manager"/>
             <argument type="service">
+<<<<<<< HEAD
               <service class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+=======
+              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/admin</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+              </service>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             </argument>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2211,6 +2299,10 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="PortfolioPortfolioBundle">Portfolio\PortfolioBundle\Entity</argument>
+<<<<<<< HEAD
+=======
+              <argument key="PortfolioUserBundle">Portfolio\UserBundle\Entity</argument>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2249,11 +2341,30 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\Symfony\src\Portfolio\PortfolioBundle\Entity</argument>
+<<<<<<< HEAD
+=======
+                        <argument>C:\wamp\www\Symfony\src\Portfolio\UserBundle\Entity</argument>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
                       </argument>
                     </service>
                   </argument>
                   <argument>Portfolio\PortfolioBundle\Entity</argument>
                 </call>
+<<<<<<< HEAD
+=======
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\Symfony\src\Portfolio\PortfolioBundle\Entity</argument>
+                        <argument>C:\wamp\www\Symfony\src\Portfolio\UserBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Portfolio\UserBundle\Entity</argument>
+                </call>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
               </service>
             </argument>
           </call>
@@ -2609,6 +2720,15 @@
             <argument>false</argument>
           </argument>
         </argument>
+<<<<<<< HEAD
+=======
+        <argument key="Portfolio\UserBundle\Entity\User" type="collection">
+          <argument key="class">%security.encoder.plain.class%</argument>
+          <argument key="arguments" type="collection">
+            <argument>false</argument>
+          </argument>
+        </argument>
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
       </argument>
     </service>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
@@ -2644,6 +2764,13 @@
         <argument>PortfolioPortfolio</argument>
       </call>
       <call method="addPath">
+<<<<<<< HEAD
+=======
+        <argument>C:\wamp\www\Symfony\src\Portfolio\UserBundle/Resources/views</argument>
+        <argument>PortfolioUser</argument>
+      </call>
+      <call method="addPath">
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
         <argument>C:\wamp\www\Symfony\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>

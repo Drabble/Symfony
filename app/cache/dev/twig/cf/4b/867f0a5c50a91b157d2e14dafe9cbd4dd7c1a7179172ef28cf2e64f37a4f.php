@@ -46,12 +46,20 @@ class __TwigTemplate_cf4b867f0a5c50a91b157d2e14dafe9cbd4dd7c1a7179172ef28cf2e64f
 \t\t\t\t\t\t<div class=\"controls\">
 \t\t\t\t\t\t\t<form class=\"col-md-10 form\" name=\"addArticle\" method=\"post\"  ";
         // line 13
+<<<<<<< HEAD
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
+=======
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
         echo ">
 \t\t\t\t\t\t\t\t<center><h2>New article<h2/></center><br/>
 \t\t\t\t\t\t\t\t";
         // line 15
+<<<<<<< HEAD
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+=======
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'widget');
+>>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
         echo "<br/>
 \t\t\t\t\t\t\t\t<button id=\"contact-submit\" type=\"submit\" class=\"btn btn-primary\">Send</button>\t\t\t\t
 \t\t\t\t\t\t\t</form>
