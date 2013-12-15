@@ -6,26 +6,39 @@
 
 {% block body %}
 		<div class="col-md-12">
-			<div class="col-md-12 img-thumbnail">
-				<center><h2>Articles</h2></center><br/>
-					<ul class="pagination" id="pagination">
-					</ul>
-						{% for key,article in articles %}
-							{% if key % 10 == 0 %}{% if key != 0 %}</div></span>{% endif %}<span class="article-group" id={{ key|number_format / 10 }}>{% endif %}
-							{% if key % 2 == 0  %}{% if key != 0 and key % 10 != 0 %}</div>{% endif %}<div class="row">{% endif %}
-							<span class="col-md-6">
-								<div class="img-thumbnail">
-									<h3><a href="/Symfony/web/app_dev.php/article/{{ article.id }}" >{{ article.title }}</a></h3>
-									<a href="/Symfony/web/app_dev.php/article/{{ article.id }}"><img src="/Symfony/web/upload/pictures/{{ article.image.title }}" class="img-responsive" alt="{{ article.image.title }}"></a><br/><br/>
-									<p>{{ article.description }}</p>
-									<p><b>Made by {{ article.autor }}</b></p>
-								</div>
-							</span>
-						{% endfor %}
-					</div>
-				</span>
-				<ul class="pagination">
+				<ul class="pagination" id="pagination">
 				</ul>
-			</div>
+					{% for key,article in articles %}
+						{% if key % 10 == 0 %}{% if key != 0 %}</div></span>{% endif %}<span class="article-group" id={{ key|number_format / 10 }}>{% endif %}
+						{% if key % 2 == 0  %}{% if key != 0 and key % 10 != 0 %}</div>{% endif %}<div class="row">{% endif %}
+						<span class="col-md-6">
+							<div class="img-thumbnail">
+								<span class="col-md-10">
+									<h3><a href="{{ path('Article', {'id': article.id}) }}" >{{ article.title }}</a></h3>
+								</span>
+								{% if is_granted('ROLE_ADMIN') %}
+									<span class="col-md-1">
+										<div class="col-md-6"></div>
+										<div class="col-md-6 btn-group">
+											<a class="btn dropdown-toggle btn-default blue" data-toggle="dropdown" href="#">
+												<span class="icon-cog icon-white"></span><span class="caret"></span>
+											</a>
+											<ul class="dropdown-menu">
+												<li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
+												<li><a class="confirm-dialog" data-bb="confirm" href="#" value="{{ path('removeArticle', {'id': article.id}) }}"><span class="icon-trash"></span> Delete</a></li>
+											</ul>
+										</div>
+									</span>
+								{% endif %}
+								<a href="{{ path('Article', {'id': article.id}) }}"><img src="/Symfony/web/upload/pictures/{{ article.image.title }}" class="img-responsive" alt="{{ article.image.title }}"></a><br/><br/>
+								<p>{{ article.description }}</p>
+								<p><b>Made by {{ article.autor }}</b></p>
+							</div>
+						</span>
+					{% endfor %}
+				</div>
+			</span>
+			<ul class="pagination">
+			</ul>
 		</div>
 {% endblock %}

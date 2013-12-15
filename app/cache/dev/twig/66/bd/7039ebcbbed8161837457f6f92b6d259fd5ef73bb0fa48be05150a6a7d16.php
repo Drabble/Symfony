@@ -46,7 +46,6 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
 \t\t\t\t";
         // line 12
         $context['_parent'] = (array) $context;
-<<<<<<< HEAD
         $context['_seq'] = twig_ensure_traversable((isset($context["images"]) ? $context["images"] : $this->getContext($context, "images")));
         foreach ($context['_seq'] as $context["key"] => $context["image"]) {
             // line 13
@@ -54,15 +53,6 @@ class __TwigTemplate_66bd7039ebcbbed8161837457f6f92b6d259fd5ef73bb0fa48be05150a6
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "title"), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "title"), "html", null, true);
-=======
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "images"));
-        foreach ($context['_seq'] as $context["key"] => $context["image"]) {
-            // line 13
-            echo "\t\t\t\t\t<img class=\"slider_img\" src=\"/Symfony/web/upload/pictures/";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "image"), "title"), "html", null, true);
-            echo "\" alt=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "image"), "title"), "html", null, true);
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo "\" />
 \t\t\t\t";
         }

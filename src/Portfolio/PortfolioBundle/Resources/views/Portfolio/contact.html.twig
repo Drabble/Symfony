@@ -6,21 +6,33 @@
 
 {% block body %}
 	<div class="row">
-		<div class="col-md-12">
-			<div class="col-md-10 col-md-offset-1 img-thumbnail">
-				<center><h2>Contact</h2></center>
-				<p>	<br />
-				<b>Deep<br />
-				7th Floor<br />
-				Block 2<br />
-				Elizabeth House<br />
-				39 York Road<br />
-				London SE1 7NQ</b><br />
-				<br />
-				T +44 (0)20 7593 0555<br />
-				F +44 (0)20 7593 0556<br />
-				<br />
-				For new business enquiries please contact talktous@deep.co.uk<br /></p>
+		<div class="col-md-12"><br/>
+			<div class="col-md-8 img-thumbnail">
+				<div class="col-md-8 col-md-offset-2">
+					<center>
+						<h3>Contact me!</h3>
+						<hr>
+						<address>
+							<strong>Email:</strong> <a href="mailto:#"> name@domain.com</a><br><br>
+							<strong>Phone:</strong> (555)123-4567
+						</address>
+					</center>
+				</div>
+				<div class="contact-form">
+					<form id="contact" method="post" class="form" role="form">
+							<div class="col-md-6 form-group">
+								<input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
+							</div>
+							<div class="col-md-6 form-group">
+								<input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+							</div>
+							<div class="col-md-12 form-group">
+								<textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+								<br />								<button class="btn btn-warning pull-right" type="submit">Send</button>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -15,10 +15,38 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-			->add('title',     'text')
-			->add('autor',     'text')
-			->add('description',     'textarea')
-			->add('content',     'textarea')
+			->add('title',     'text', array(
+				'attr'   =>  array(
+					'class'   => 'form-group form-control',
+					'val' => '',
+					'placeholder' => 'Title',
+					'label' => false
+				)
+            ))
+			->add('autor',     'text', array(
+				'attr'   =>  array(
+					'class'   => 'form-group form-control',
+					'val' => '',
+					'placeholder' => 'Autor',
+					'label' => false
+				)
+            ))
+			->add('description',     'textarea', array(
+				'attr'   =>  array(
+					'class'   => 'form-group form-control',
+					'val' => '',
+					'placeholder' => 'Description',
+					'label' => false
+				)
+            ))
+			->add('content',     'textarea', array(
+				'attr'   =>  array(
+					'class'   => 'form-group form-control',
+					'val' => '',
+					'placeholder' => 'Content',
+					'label' => false
+				)
+            ))
 			->add('image',        new ImageType())
         ;
     }

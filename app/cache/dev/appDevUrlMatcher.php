@@ -196,6 +196,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::studiesAction',  '_route' => 'Studies',);
         }
 
+        // Users
+        if ($pathinfo === '/users') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::usersAction',  '_route' => 'Users',);
+        }
+
         // Contact
         if ($pathinfo === '/contact') {
             return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::contactAction',  '_route' => 'Contact',);
@@ -212,16 +217,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/a')) {
+            // Account
+            if ($pathinfo === '/account') {
+                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::accountAction',  '_route' => 'Account',);
+            }
+
             // Article
             if (0 === strpos($pathinfo, '/article') && preg_match('#^/article/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'Article')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::articleAction',));
             }
 
-            // addComment
-            if ($pathinfo === '/addComment') {
-                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::addCommentAction',  '_route' => 'addComment',);
-            }
+        }
 
+        // User
+        if (0 === strpos($pathinfo, '/user') && preg_match('#^/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'User')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::userAction',));
+        }
+
+        // addComment
+        if ($pathinfo === '/addComment') {
+            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::addCommentAction',  '_route' => 'addComment',);
         }
 
         // getComments

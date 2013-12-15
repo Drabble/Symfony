@@ -5,7 +5,7 @@ namespace Portfolio\UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
-use Portfolio\UserBundle\Entity\user;
+use Portfolio\UserBundle\Entity\User;
 use Portfolio\UserBundle\Form\UserType;
 
 class SecurityController extends Controller

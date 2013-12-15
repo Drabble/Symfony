@@ -7,10 +7,12 @@
 {% block body %}
 	<div class="row">
 		<div class="col-md-12">
-			<center><h2>{{ article.title }}</h2><br/>
-			<figure id="article_image"><img   src="/Symfony/web/upload/pictures/{{ article.image.title }}" alt="{{ article.image.title }}"/><figcaption>{{ article.description }}</figcaption></figure></center><br/>
-			<p><b></b><br/>{{ article.content }}</p><br/>		
-			<p>Created by <b>{{ article.autor }}</b> the <b>{{ article.date|date('d.m.Y') }}</b> at {{ article.date|date('H:i:s') }}</p><br/>
+			<div class="col-md-12 img-thumbnail">
+				<center><h2>{{ article.title }}</h2><br/>
+				<figure id="article_image"><img   src="/Symfony/web/upload/pictures/{{ article.image.title }}" alt="{{ article.image.title }}"/><figcaption>{{ article.description }}</figcaption></figure></center><br/>
+				<p><b>Description:</b><br/>{{ article.content }}</p><br/>		
+				<span class="pull-right"><p>Created by <b>{{ article.autor }}</b> the <b>{{ article.date|date('d.m.Y') }}</b> at {{ article.date|date('H:i:s') }}</p><br/></span>
+			</div>
 			<div class="panel panel-default widget">
 				<div class="panel-heading">
 					{% if article.comments is empty %}<h3 class="panel-title">No Comments</h3>

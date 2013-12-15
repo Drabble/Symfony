@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/bootstrap.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/vendor/jquery.ui.widget.js') }}"></script> 
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/jquery.slides.min.js') }}"></script> 
+		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/bootbox.js') }}"></script> 
 		<script type="text/javascript" src="{{ asset('bundles/portfolioportfolio/js/portfolio.js') }}"></script> 
 	</head>
 	<body>
@@ -46,23 +47,24 @@
 			</div>
 			<hr />
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-7">
 					<ul class="nav nav-tabs">
-						<li id="menu" {% if active == "index" %}class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/">Home</a></li>
-						<li id="menu" {% if active == "studies" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/studies">Studies</a></li>
-						<li id="menu" {% if active == "articles" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/articles">Articles</a></li>
-						<li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/contact">Contact</a></li>
-						<li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/admin">Admin</a></li>
-						<li id="menu" {% if active == "chat" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/chat">Chat</a></li>
+						<li id="menu" {% if active == "index" %}class="active_page"{% endif%}><a href="{{ path('Portfolio') }}">Home</a></li>
+						<li id="menu" {% if active == "studies" %} class="active_page"{% endif%}><a href="{{ path('Studies') }}">Studies</a></li>
+						<li id="menu" {% if active == "articles" %} class="active_page"{% endif%}><a href="{{ path('Articles') }}">Articles</a></li>
+						<li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="{{ path('Contact') }}">Contact</a></li>
+						{% if is_granted('ROLE_ADMIN') %}<li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="{{ path('Admin') }}">Admin</a></li>{% endif %}
+						<li id="menu" {% if active == "chat" %} class="active_page"{% endif%}><a href="{{ path('Chat') }}">Chat</a></li>
 						{% if app.user %}
-							<li id="menu" {% if active == "login" %} class="active_page"{% endif%}><a href="/Symfony/web/app_dev.php/account">Account</a></li>
+							<li id="menu" {% if active == "account" %} class="active_page"{% endif%}><a href="{{ path('Account') }}">Account</a></li>
+							<li id="menu" {% if active == "users" %} class="active_page"{% endif%}><a href="{{ path('Users') }}">Users</a></li>
 						{% else %}
 							<li id="menu" {% if active == "login" %} class="active_page dropdown"{% else %}class="dropdown"{% endif%}>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
 								<ul class="dropdown-menu unstyled pull-left dropdown-features">
 									<div class="panel panel-default">
 										<div class="panel-heading">
-											<a href="/Symfony/web/app_dev.php/login"><h3 class="panel-title">Please sign in</h3></a>
+											<a href="{{ path('login') }}"><h3 class="panel-title">Please sign in</h3></a>
 										</div>
 										<div class="panel-body">
 											<form action="{{ path('login_check') }}" method="post">

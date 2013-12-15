@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * user
+ * User
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Portfolio\UserBundle\Entity\UserRepository")
  */
 class User implements UserInterface
 {
@@ -60,7 +60,7 @@ class User implements UserInterface
 
 	public function __construct()
 	{
-		$this->roles = array();
+		$this->roles = array('ROLE_USER');
 		$this->salt = "test";
 	}
 	

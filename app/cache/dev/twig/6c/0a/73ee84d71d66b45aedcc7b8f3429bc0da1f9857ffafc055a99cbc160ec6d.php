@@ -48,36 +48,26 @@ class __TwigTemplate_6c0a73ee84d71d66b45aedcc7b8f3429bc0da1f9857ffafc055a99cbc16
 \t\t\t\t\t\t\t<h3 class=\"panel-title\">Please sign in</h3>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"panel-body\">
+\t\t\t\t\t\t\t<br/>
 \t\t\t\t\t\t\t<form action=\"";
-        // line 17
+        // line 18
         echo $this->env->getExtension('routing')->getPath("login_check");
         echo "\" method=\"post\">
 \t\t\t\t\t\t\t<fieldset>
 \t\t\t\t\t\t\t\t";
-        // line 19
-<<<<<<< HEAD
+        // line 20
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 20
+            // line 21
             echo "\t\t\t\t\t\t\t\t\t<div class=\"alert alert-danger\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "message"), "html", null, true);
-=======
-        if ($this->getContext($context, "error")) {
-            // line 20
-            echo "\t\t\t\t\t\t\t\t\t<div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "error"), "message"), "html", null, true);
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo "</div>
 \t\t\t\t\t\t\t\t";
         }
-        // line 22
+        // line 23
         echo "\t\t\t\t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"Username\" type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 23
-<<<<<<< HEAD
+        // line 24
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-=======
-        echo twig_escape_filter($this->env, $this->getContext($context, "last_username"), "html", null, true);
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
         echo "\"/>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"form-group\">
@@ -88,7 +78,7 @@ class __TwigTemplate_6c0a73ee84d71d66b45aedcc7b8f3429bc0da1f9857ffafc055a99cbc16
 \t\t\t\t\t\t\t\t\t\t<input name=\"remember\" type=\"checkbox\" value=\"Remember Me\"> Remember Me
 \t\t\t\t\t\t\t\t\t</label>
 \t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<input class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" value=\"Login\">
+\t\t\t\t\t\t\t\t<button id=\"contact-submit\" type=\"submit\" class=\"btn btn-primary\">Login</button>
 \t\t\t\t\t\t\t</fieldset>
 \t\t\t\t\t\t\t</form>
 \t\t\t\t\t\t</div>
@@ -100,63 +90,20 @@ class __TwigTemplate_6c0a73ee84d71d66b45aedcc7b8f3429bc0da1f9857ffafc055a99cbc16
 \t\t\t\t\t\t\t<h3 class=\"panel-title\">Register</h3>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"panel-body\">
-<<<<<<< HEAD
-\t\t\t\t\t\t\t<form accept-charset=\"UTF-8\" role=\"form\">
-\t\t\t\t\t\t\t\t<fieldset>
-\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"E-mail\" name=\"email\" type=\"text\">
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"Username\" name=\"username\" type=\"text\">
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"Password\" name=\"password\" type=\"password\" value=\"\">
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"Password confirmation\" name=\"password_confirmation\" type=\"password\" value=\"\">
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t<div class=\"checkbox\">
-\t\t\t\t\t\t\t\t\t\t<label>
-\t\t\t\t\t\t\t\t\t\t\t<input name=\"terms\" type=\"checkbox\" value=\"Accept the terms & conditions\"> Accept the terms & conditions
-\t\t\t\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t<input class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" value=\"Create account\">
-\t\t\t\t\t\t\t\t</fieldset>
-\t\t\t\t\t\t\t</form>
-=======
 \t\t\t\t\t\t\t<div class=\"controls\">
-\t\t\t\t\t\t\t<form class=\"form\" name=\"addArticle\" method=\"post\" ";
-        // line 46
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
-        echo ">
-\t\t\t\t\t\t\t\t<fieldset>
-\t\t\t\t\t\t\t\t\t";
-        // line 48
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'errors');
-        echo "
-
-\t\t\t\t\t\t\t\t\t";
-        // line 50
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "username"), 'row');
-        echo "
-\t\t\t\t\t\t\t\t\t";
-        // line 51
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "email"), 'row');
-        echo "
-\t\t\t\t\t\t\t\t\t";
-        // line 52
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "password"), 'row');
-        echo "
-
-\t\t\t\t\t\t\t\t\t";
-        // line 54
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'rest');
-        echo "
-\t\t\t\t\t\t\t\t\t<button id=\"contact-submit\" type=\"submit\" class=\"btn btn-primary\">Create account</button>
-\t\t\t\t\t\t\t\t</fieldset>
-\t\t\t\t\t\t\t</form>
+\t\t\t\t\t\t\t\t<form action=\"";
+        // line 47
+        echo $this->env->getExtension('routing')->getPath("login");
+        echo "\" class=\"form\" name=\"addArticle\" method=\"post\">
+\t\t\t\t\t\t\t\t\t<fieldset>
+\t\t\t\t\t\t\t\t\t\t";
+        // line 49
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+        echo "<br/>
+\t\t\t\t\t\t\t\t\t\t<button id=\"contact-submit\" type=\"submit\" class=\"btn btn-primary\">Register</button>
+\t\t\t\t\t\t\t\t\t</fieldset>
+\t\t\t\t\t\t\t\t</form>
 \t\t\t\t\t\t\t</div>
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t</span>
@@ -178,10 +125,6 @@ class __TwigTemplate_6c0a73ee84d71d66b45aedcc7b8f3429bc0da1f9857ffafc055a99cbc16
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  69 => 23,  66 => 22,  60 => 20,  58 => 19,  53 => 17,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
-=======
-        return array (  118 => 54,  113 => 52,  109 => 51,  105 => 50,  100 => 48,  95 => 46,  69 => 23,  66 => 22,  60 => 20,  58 => 19,  53 => 17,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
+        return array (  101 => 49,  96 => 47,  70 => 24,  67 => 23,  61 => 21,  59 => 20,  54 => 18,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

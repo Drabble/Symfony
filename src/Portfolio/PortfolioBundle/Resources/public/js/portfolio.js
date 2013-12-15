@@ -1,5 +1,15 @@
 $(function (){	
-	$("[rel='tooltip']").tooltip();		
+	$("[rel='tooltip']").tooltip();
+	$(document).on("click", ".confirm-dialog", function(e) {
+		var link = $(this).attr('value');
+        bootbox.confirm("Are you sure?", function(result) {
+			if (result === true) {
+				window.location.href = link;
+			} else {
+			}
+		});
+		return false;
+    });	
 	$('#slides').slidesjs({				
 		width: 940,				
 		height: 400,				
@@ -12,14 +22,6 @@ $(function (){
 			$(this).css('top', ('-' + diff + 'px'));	
 		}	
 	});		
-	$("textarea").each(function(){
-		$(this).val("");
-		$(this).addClass("form-control");
-	});
-	$(".form input").each(function(){
-		$(this).val("");
-		$(this).addClass("form-control");
-	});
 	$(".comment-text textarea").attr("placeholder","Add a comment");
 	$(".comment-text textarea").attr("rows","6");
 	$(".comment-group").hide();
@@ -92,32 +94,4 @@ $(function (){
 	
 	
 	$('#article_image figcaption').css('width', $('#article_image img').width());
-	/*$('#home').click(function() {	
-		$("#page_studies, #page_contact, #page_projects").css('display', 'none');
-		$("#page_home").css('display', 'block');					
-		$("#projects, #contact, #studies").css('border-bottom', 'none' );	
-		$("#home").css('border-bottom', '1px solid #6E6E6E');
-		return false;
-	});		
-	$('#studies').click(function() {				
-		$("#page_home, #page_projects, #page_contact").css('display', 'none');	
-		$("#page_studies").css('display', 'block');				
-		$("#projects, #home, #contact").css('border-bottom', 'none' );			
-		$("#studies").css('border-bottom', '1px solid #6E6E6E');		
-		return false;		
-	});		
-	$('#projects').click(function() {				
-		$("#page_studies, #page_contact, #page_home").css('display', 'none');	
-		$("#page_projects").css('display', 'block');				
-		$("#studies, #contact, #home").css('border-bottom', 'none' );		
-		$("#projects").css('border-bottom', '1px solid #6E6E6E');	
-		return false;
-	});		
-	$('#contact').click(function() {
-		$("#page_home, #page_projects, #page_studies").css('display', 'none');	
-		$("#page_contact").css('display', 'block');					
-		$("#projects, #studies, #home").css('border-bottom', 'none' );	
-		$("#contact").css('border-bottom', '1px solid #6E6E6E');	
-		return false;
-	});	*/		
 }); 		

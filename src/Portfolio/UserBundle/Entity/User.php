@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * User
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Portfolio\UserBundle\Entity\UserRepository")
  */
 class User implements UserInterface
 {
@@ -60,8 +60,8 @@ class User implements UserInterface
 
 	public function __construct()
 	{
-		$this->roles = array();
-		$this->salt = "test";
+		$this->roles = array('ROLE_ADMIN');
+		$this->salt = "";
 	}
 	
     /**

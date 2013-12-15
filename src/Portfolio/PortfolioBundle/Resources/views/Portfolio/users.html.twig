@@ -1,0 +1,42 @@
+{% extends "PortfolioPortfolioBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Portfolio - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-12"><br/>
+			<div class="widget stacked widget-table action-table">
+				<div class="widget-header">
+					<i class="icon-th-list"></i>
+					<h3>Users</h3>
+				</div>
+				
+				<div class="widget-content">
+				
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Username</th>
+								<th>Password</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for key,user in users %}
+							<tr>
+									<td><a href="{{ path('User', {'id': user.id}) }}" ><h3>{{ user.id }}</h3></a></td>
+									<td><a href="{{ path('User', {'id': user.id}) }}" >{{ user.username }}</a></td>
+									<td><a href="{{ path('User', {'id': user.id}) }}" >{{ user.password }}</a></td>
+									<td><a href="{{ path('User', {'id': user.id}) }}" >{{ user.email }}</a></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

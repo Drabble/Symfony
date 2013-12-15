@@ -10,6 +10,9 @@ Articles:
 Studies:
     path:     /studies
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:studies }
+Users:
+    path:     /users
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:users }
 Contact:
     path:     /contact
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:contact }
@@ -19,9 +22,15 @@ Admin:
 Chat:
     path:     /chat
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:chat }
+Account:
+    path:     /account
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:account }
 Article:
     path:     /article/{id}
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:article }
+User:
+    path:     /user/{id}
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:user }
 addComment:
     path:     /addComment
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:addComment }

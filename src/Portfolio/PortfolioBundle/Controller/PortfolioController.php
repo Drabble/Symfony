@@ -9,6 +9,7 @@ use Portfolio\PortfolioBundle\Entity\Image;
 use Portfolio\PortfolioBundle\Entity\Comment;
 use Portfolio\PortfolioBundle\Form\ArticleType;
 use Portfolio\PortfolioBundle\Form\ImageType;
+use Portfolio\UserBundle\Entity\User;
 
 class PortfolioController extends Controller
 {
@@ -31,6 +32,48 @@ class PortfolioController extends Controller
 		}
 		return $this->render('PortfolioPortfolioBundle:Portfolio:index.html.twig', array('images' => $array_images, "active" => "index"));
 	}
+	public function accountAction(){
+		return $this->render('PortfolioPortfolioBundle:Portfolio:account.html.twig', array("active" => "account"));
+	}
+	public function usersAction(){
+		$array_users = array();
+		$repository = $this->getDoctrine()
+						->getManager()
+						->getRepository('PortfolioUserBundle:User');
+
+		$listeusers = $repository->findBy(array());
+ 
+		foreach($listeusers as $user)
+		{
+		  // $user est une instance de user
+		  $array_user = array(
+			"username" => $user->getUsername(),
+			"password" => $user->getPassword(),
+			"id" => $user->getId(),
+			"email" => $user->getEmail()
+			);
+			array_push($array_users, $array_user);
+	
+		}
+		return $this->render('PortfolioPortfolioBundle:Portfolio:users.html.twig', array('users' => $array_users, "active" => "users"));
+	}
+	public function userAction($id)
+	{
+		$repository = $this->getDoctrine()
+							->getManager()
+							->getRepository('PortfolioUserBundle:User');
+							
+							
+		$user = $repository->find($id);	
+		if($user === null)
+		{
+			throw $this->createNotFoundException('User[id='.$id.'] inexistant.');
+		}
+		
+		return $this->render('PortfolioPortfolioBundle:Portfolio:user.html.twig', array(
+		'user' => $user, "active" => "users"
+		));
+	}
 	public function studiesAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:studies.html.twig', array("active" => "studies"));
 	}
@@ -47,7 +90,6 @@ class PortfolioController extends Controller
 		$request = $this->get('request');
 		if ($request->getMethod() == 'POST') {
 			$form->bind($request);
-			echo $form;
 			if ($form->isValid()) {
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($article);
@@ -96,7 +138,14 @@ class PortfolioController extends Controller
 		$comment = new Comment();
 		$comment->setAutor("Anonymous");
 		$form = $this->createFormBuilder($comment)
-			->add('content',     'textarea')
+			->add('content',     'textarea', array(
+				'attr'   =>  array(
+					'class'   => 'form-group form-control',
+					'val' => '',
+					'placeholder' => 'Email',
+					'label' => false
+				)
+			))
 			->getForm();
 		
 		$request = $this->get('request');
@@ -131,7 +180,7 @@ class PortfolioController extends Controller
 		$em = $this->getDoctrine()->getManager();
 		$em->remove($article);
 		$em->flush();
-		return $this->articlesAction();
+		return $this->redirect($this->generateUrl('Articles'));
 	}
 }
 ?>

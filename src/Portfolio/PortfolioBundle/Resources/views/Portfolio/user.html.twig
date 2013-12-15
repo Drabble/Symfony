@@ -1,0 +1,17 @@
+{% extends "PortfolioPortfolioBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Portfolio - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-12">
+			<h2>{{ user.username }}</h2><br/>
+			<ul><li>{{ user.password }}</li>
+			<li>{{ user.email }}</li></ul>
+
+			<p></p>
+		</div>
+	</div>
+{% endblock %}

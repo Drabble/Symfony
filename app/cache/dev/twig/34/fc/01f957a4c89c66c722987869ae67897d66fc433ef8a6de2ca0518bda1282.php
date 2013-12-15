@@ -56,6 +56,10 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
         echo "\"></script> 
 \t\t<script type=\"text/javascript\" src=\"";
         // line 17
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/bootbox.js"), "html", null, true);
+        echo "\"></script> 
+\t\t<script type=\"text/javascript\" src=\"";
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/portfolioportfolio/js/portfolio.js"), "html", null, true);
         echo "\"></script> 
 \t</head>
@@ -89,93 +93,83 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t</div>
 \t\t\t<hr />
 \t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"col-md-6\">
+\t\t\t\t<div class=\"col-md-7\">
 \t\t\t\t\t<ul class=\"nav nav-tabs\">
 \t\t\t\t\t\t<li id=\"menu\" ";
-        // line 51
-<<<<<<< HEAD
+        // line 52
         if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "index")) {
-=======
-        if (($this->getContext($context, "active") == "index")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
             echo "class=\"active_page\"";
         }
-        echo "><a href=\"/Symfony/web/app_dev.php/\">Home</a></li>
-\t\t\t\t\t\t<li id=\"menu\" ";
-        // line 52
-<<<<<<< HEAD
-        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "studies")) {
-=======
-        if (($this->getContext($context, "active") == "studies")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
-            echo " class=\"active_page\"";
-        }
-        echo "><a href=\"/Symfony/web/app_dev.php/studies\">Studies</a></li>
+        echo "><a href=\"";
+        echo $this->env->getExtension('routing')->getPath("Portfolio");
+        echo "\">Home</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 53
-<<<<<<< HEAD
-        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "articles")) {
-=======
-        if (($this->getContext($context, "active") == "articles")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
+        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "studies")) {
             echo " class=\"active_page\"";
         }
-        echo "><a href=\"/Symfony/web/app_dev.php/articles\">Articles</a></li>
+        echo "><a href=\"";
+        echo $this->env->getExtension('routing')->getPath("Studies");
+        echo "\">Studies</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 54
-<<<<<<< HEAD
-        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "contact")) {
-=======
-        if (($this->getContext($context, "active") == "contact")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
+        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "articles")) {
             echo " class=\"active_page\"";
         }
-        echo "><a href=\"/Symfony/web/app_dev.php/contact\">Contact</a></li>
+        echo "><a href=\"";
+        echo $this->env->getExtension('routing')->getPath("Articles");
+        echo "\">Articles</a></li>
 \t\t\t\t\t\t<li id=\"menu\" ";
         // line 55
-<<<<<<< HEAD
-        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "admin")) {
-=======
-        if (($this->getContext($context, "active") == "admin")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
+        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "contact")) {
             echo " class=\"active_page\"";
         }
-        echo "><a href=\"/Symfony/web/app_dev.php/admin\">Admin</a></li>
-\t\t\t\t\t\t<li id=\"menu\" ";
-        // line 56
-<<<<<<< HEAD
-        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "chat")) {
-=======
-        if (($this->getContext($context, "active") == "chat")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
-            echo " class=\"active_page\"";
-        }
-        echo "><a href=\"/Symfony/web/app_dev.php/chat\">Chat</a></li>
+        echo "><a href=\"";
+        echo $this->env->getExtension('routing')->getPath("Contact");
+        echo "\">Contact</a></li>
 \t\t\t\t\t\t";
-        // line 57
-<<<<<<< HEAD
-        if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user")) {
-            // line 58
-            echo "\t\t\t\t\t\t\t<li id=\"menu\" ";
-            if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "login")) {
-=======
-        if ($this->getAttribute($this->getContext($context, "app"), "user")) {
-            // line 58
-            echo "\t\t\t\t\t\t\t<li id=\"menu\" ";
-            if (($this->getContext($context, "active") == "login")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
+        // line 56
+        if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
+            echo "<li id=\"menu\" ";
+            if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "admin")) {
                 echo " class=\"active_page\"";
             }
-            echo "><a href=\"/Symfony/web/app_dev.php/account\">Account</a></li>
+            echo "><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("Admin");
+            echo "\">Admin</a></li>";
+        }
+        // line 57
+        echo "\t\t\t\t\t\t<li id=\"menu\" ";
+        if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "chat")) {
+            echo " class=\"active_page\"";
+        }
+        echo "><a href=\"";
+        echo $this->env->getExtension('routing')->getPath("Chat");
+        echo "\">Chat</a></li>
+\t\t\t\t\t\t";
+        // line 58
+        if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user")) {
+            // line 59
+            echo "\t\t\t\t\t\t\t<li id=\"menu\" ";
+            if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "account")) {
+                echo " class=\"active_page\"";
+            }
+            echo "><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("Account");
+            echo "\">Account</a></li>
+\t\t\t\t\t\t\t<li id=\"menu\" ";
+            // line 60
+            if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "users")) {
+                echo " class=\"active_page\"";
+            }
+            echo "><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("Users");
+            echo "\">Users</a></li>
 \t\t\t\t\t\t";
         } else {
-            // line 60
+            // line 62
             echo "\t\t\t\t\t\t\t<li id=\"menu\" ";
-<<<<<<< HEAD
             if (((isset($context["active"]) ? $context["active"] : $this->getContext($context, "active")) == "login")) {
-=======
-            if (($this->getContext($context, "active") == "login")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
                 echo " class=\"active_page dropdown\"";
             } else {
                 echo "class=\"dropdown\"";
@@ -185,11 +179,14 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t\t\t\t\t\t<ul class=\"dropdown-menu unstyled pull-left dropdown-features\">
 \t\t\t\t\t\t\t\t\t<div class=\"panel panel-default\">
 \t\t\t\t\t\t\t\t\t\t<div class=\"panel-heading\">
-\t\t\t\t\t\t\t\t\t\t\t<a href=\"/Symfony/web/app_dev.php/login\"><h3 class=\"panel-title\">Please sign in</h3></a>
+\t\t\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 67
+            echo $this->env->getExtension('routing')->getPath("login");
+            echo "\"><h3 class=\"panel-title\">Please sign in</h3></a>
 \t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t<div class=\"panel-body\">
 \t\t\t\t\t\t\t\t\t\t\t<form action=\"";
-            // line 68
+            // line 70
             echo $this->env->getExtension('routing')->getPath("login_check");
             echo "\" method=\"post\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<fieldset>
@@ -214,31 +211,27 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t";
         }
-        // line 90
+        // line 92
         echo "\t\t\t\t\t</ul>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-3 pull-right\">
 \t\t\t\t\t<ul class=\"nav\">
 \t\t\t\t\t";
-        // line 94
-<<<<<<< HEAD
+        // line 96
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user")) {
-=======
-        if ($this->getAttribute($this->getContext($context, "app"), "user")) {
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
-            // line 95
+            // line 97
             echo "\t\t\t\t\t\t<li id=\"menu\" class=\"pull-right\"><a href=\"/Symfony/web/app_dev.php/logout\">logout</a></li>
 \t\t\t\t\t";
         }
-        // line 97
+        // line 99
         echo "\t\t\t\t\t</ul>
 \t\t\t\t</div>
 \t\t\t</div><br/>
  
     ";
-        // line 101
-        $this->displayBlock('body', $context, $blocks);
         // line 103
+        $this->displayBlock('body', $context, $blocks);
+        // line 105
         echo "\t\t\t<br />
 \t\t\t<br />
 \t\t\t<hr />
@@ -252,10 +245,10 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 </html>";
     }
 
-    // line 101
+    // line 103
     public function block_body($context, array $blocks = array())
     {
-        // line 102
+        // line 104
         echo "    ";
     }
 
@@ -271,10 +264,6 @@ class __TwigTemplate_34fc01f957a4c89c66c722987869ae67897d66fc433ef8a6de2ca0518bd
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  220 => 102,  217 => 101,  203 => 103,  201 => 101,  195 => 97,  191 => 95,  189 => 94,  183 => 90,  158 => 68,  142 => 60,  134 => 58,  132 => 57,  126 => 56,  120 => 55,  114 => 54,  108 => 53,  102 => 52,  96 => 51,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  63 => 15,  52 => 13,  48 => 12,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
-=======
-        return array (  220 => 102,  217 => 101,  203 => 103,  201 => 101,  195 => 97,  191 => 95,  189 => 94,  183 => 90,  158 => 68,  142 => 60,  134 => 58,  132 => 57,  126 => 56,  120 => 55,  114 => 54,  108 => 53,  102 => 52,  96 => 51,  59 => 17,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  100 => 48,  95 => 46,  69 => 23,  66 => 22,  60 => 20,  58 => 19,  53 => 17,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
->>>>>>> 0905f2fec73625b23298bcf097e3731c0fb7f117
+        return array (  252 => 104,  249 => 103,  235 => 105,  233 => 103,  227 => 99,  223 => 97,  221 => 96,  215 => 92,  190 => 70,  184 => 67,  171 => 62,  162 => 60,  153 => 59,  151 => 58,  142 => 57,  132 => 56,  124 => 55,  116 => 54,  108 => 53,  100 => 52,  63 => 18,  59 => 17,  55 => 16,  41 => 11,  37 => 10,  33 => 9,  20 => 1,  137 => 52,  127 => 48,  123 => 47,  114 => 46,  93 => 28,  83 => 20,  81 => 19,  74 => 17,  69 => 14,  61 => 13,  51 => 15,  47 => 14,  42 => 8,  39 => 7,  32 => 4,  29 => 8,);
     }
 }
