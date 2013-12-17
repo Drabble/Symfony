@@ -53,7 +53,6 @@
 						<li id="menu" {% if active == "studies" %} class="active_page"{% endif%}><a href="{{ path('Studies') }}">Studies</a></li>
 						<li id="menu" {% if active == "articles" %} class="active_page"{% endif%}><a href="{{ path('Articles') }}">Articles</a></li>
 						<li id="menu" {% if active == "contact" %} class="active_page"{% endif%}><a href="{{ path('Contact') }}">Contact</a></li>
-						{% if is_granted('ROLE_ADMIN') %}<li id="menu" {% if active == "admin" %} class="active_page"{% endif%}><a href="{{ path('Admin') }}">Admin</a></li>{% endif %}
 						<li id="menu" {% if active == "chat" %} class="active_page"{% endif%}><a href="{{ path('Chat') }}">Chat</a></li>
 						{% if app.user %}
 							<li id="menu" {% if active == "account" %} class="active_page"{% endif%}><a href="{{ path('Account') }}">Account</a></li>

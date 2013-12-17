@@ -16,9 +16,6 @@ Users:
 Contact:
     path:     /contact
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:contact }
-Admin:
-    path:     /admin
-    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:admin }
 Chat:
     path:     /chat
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:chat }

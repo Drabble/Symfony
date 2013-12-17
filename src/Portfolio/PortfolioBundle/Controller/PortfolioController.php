@@ -137,7 +137,13 @@ class PortfolioController extends Controller
 	public function contactAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:contact.html.twig', array("active" => "contact"));
 	}
-	public function adminAction(){
+	public function articlesAction()
+	{
+		$array_articles = array();
+		$repository = $this->getDoctrine()
+						->getManager()
+						->getRepository('PortfolioPortfolioBundle:Article');
+						
 		$article = new Article();
 		$form = $this->createForm(new ArticleType, $article);
 		
@@ -150,14 +156,6 @@ class PortfolioController extends Controller
 				$em->flush();
 			}
 		}
-		return $this->render('PortfolioPortfolioBundle:Portfolio:admin.html.twig', array("active" => "admin", 'form' => $form->createView()));
-	}
-	public function articlesAction()
-	{
-		$array_articles = array();
-		$repository = $this->getDoctrine()
-						->getManager()
-						->getRepository('PortfolioPortfolioBundle:Article');
 
 		$listeArticles = $repository->findBy(array(), array('id' => 'DESC'));
  
@@ -174,7 +172,7 @@ class PortfolioController extends Controller
 			array_push($array_articles, $array_article);
 	
 		}
-		return $this->render('PortfolioPortfolioBundle:Portfolio:articles.html.twig', array('articles' => $array_articles, "active" => "articles"));
+		return $this->render('PortfolioPortfolioBundle:Portfolio:articles.html.twig', array('articles' => $array_articles, "active" => "articles", 'form' => $form->createView()));
 	}
 	public function articleAction($id)
 	{

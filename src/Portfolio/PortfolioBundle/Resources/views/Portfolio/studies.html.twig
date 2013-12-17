@@ -30,12 +30,11 @@
 					{% endif %}
 				</div>
 			{% endfor %}
-			</div>
 			{% if is_granted('ROLE_ADMIN') %}
-			<div class="controls-group col-md-8 img-thumbnail">
-				<div class="controls">
-					<form class="col-md-12 form" name="addStudy" method="post"  {{ form_enctype(form) }}>
-						<center><h2>New study<h2/></center><br/>
+			<div class="col-md-8 img-thumbnail">
+				<div class="col-md-12 controls-group">
+					<form class="form" name="addStudy" method="post"  {{ form_enctype(form) }}>
+						<center><h2>Add a study<h2/></center><br/>
 						{{ form_widget(form) }}<br/>
 						<button id="contact-submit" type="submit" class="btn btn-primary">Send</button>				
 					</form>

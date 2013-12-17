@@ -201,19 +201,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::usersAction',  '_route' => 'Users',);
         }
 
-        // Contact
-        if ($pathinfo === '/contact') {
-            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::contactAction',  '_route' => 'Contact',);
-        }
+        if (0 === strpos($pathinfo, '/c')) {
+            // Contact
+            if ($pathinfo === '/contact') {
+                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::contactAction',  '_route' => 'Contact',);
+            }
 
-        // Admin
-        if ($pathinfo === '/admin') {
-            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::adminAction',  '_route' => 'Admin',);
-        }
+            // Chat
+            if ($pathinfo === '/chat') {
+                return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::chatAction',  '_route' => 'Chat',);
+            }
 
-        // Chat
-        if ($pathinfo === '/chat') {
-            return array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::chatAction',  '_route' => 'Chat',);
         }
 
         if (0 === strpos($pathinfo, '/a')) {

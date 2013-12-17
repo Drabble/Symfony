@@ -2,13 +2,12 @@ Page articles - chargement des pages ajax
 Page chat - chat ajax 
 Page Article - Commentaires ajax
 Page Accueil - limité le nombre d'images d'articles
-Page login - Login + register 
 
-Admin - Suppression, modification des articles
-Recherche - Faire fonctionner
+Page recherche
+Page article à améliorer
+page user
+Page modifier article / study
 
-
-Objet user - creation
 Objet articles - images (many-to-many)
 
 Recup sur autre ordi :
