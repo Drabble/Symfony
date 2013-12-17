@@ -7,86 +7,41 @@
 {% block body %}
 	<div class="row">
 		<div class="col-md-12"><br/>
-			<div class="col-md-8 img-thumbnail">
-				<div class="col-md-11">
-					<h3>Senior Designer</h3>
-					<h6>Holler Sydney, Australia</h6>
-					<h6>06.05.2013 - 21.06.2015</h6>
-					<h6><b><a href="#">More... </a></b></h6>
+			{% for key,study in studies %}
+				<div class="col-md-8 img-thumbnail">
+					<div class="col-md-11">
+						<h3>{{ study.title }}</h3>
+						<h6>{{ study.enterprise }}</h6>
+						<h6>{{ study.dates }}</h6>
+						<h6><b><a href="https://{{ study.link }}">More... </a></b></h6>
+					</div>	
+					{% if is_granted('ROLE_ADMIN') %}
+						<div class="col-md-1">
+							<div class="btn-group">
+								<a class="btn dropdown-toggle btn-default blue" data-toggle="dropdown" href="#">
+									<span class="icon-cog icon-white"></span><span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
+									<li><a class="confirm-dialog" data-bb="confirm" href="#" value="{{ path('removeStudy', {'id': study.id}) }}"><span class="icon-trash"></span> Delete</a></li>
+								</ul>
+							</div>
+						</div>
+					{% endif %}
 				</div>
-
-				<div class="col-md-1">
-					<div class="btn-group">
-						<a class="btn dropdown-toggle btn-default blue" data-toggle="dropdown" href="#">
-							<span class="icon-cog icon-white"></span><span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-							<li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-						</ul>
-					</div>
+			{% endfor %}
+			</div>
+			{% if is_granted('ROLE_ADMIN') %}
+			<div class="controls-group col-md-8 img-thumbnail">
+				<div class="controls">
+					<form class="col-md-12 form" name="addStudy" method="post"  {{ form_enctype(form) }}>
+						<center><h2>New study<h2/></center><br/>
+						{{ form_widget(form) }}<br/>
+						<button id="contact-submit" type="submit" class="btn btn-primary">Send</button>				
+					</form>
 				</div>
 			</div>
-			<div class="col-md-8 img-thumbnail">
-				<div class="col-md-11">
-					<h3>Designer</h3>
-					<h6>Holler Sydney, Australia</h6>
-					<h6>06.05.2013 - 21.06.2015</h6>
-					<h6><b><a href="#">More... </a></b></h6>
-				</div>
-
-				<div class="col-md-1">
-					<div class="btn-group">
-						<a class="btn dropdown-toggle btn-default blue" data-toggle="dropdown" href="#">
-							<span class="icon-cog icon-white"></span><span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-							<li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-8 img-thumbnail">
-				<div class="col-md-11">
-					<h3>Illustrator, Designer and Animator</h3>
-					<h6>Cyberdesign Works Sydney, Australia</h6>
-					<h6>06.05.2013 - 21.06.2015</h6>
-					<h6><b><a href="#">More... </a></b></h6>
-				</div>
-
-				<div class="col-md-1">
-					<div class="btn-group">
-						<a class="btn dropdown-toggle btn-default blue" data-toggle="dropdown" href="#">
-							<span class="icon-cog icon-white"></span><span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-							<li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-8 img-thumbnail">
-				<div class="col-md-11">
-					<h3>Illustrator & Designer</h3>
-					<h6>Reborn Sydney, Australia</h6>
-					<h6>06.05.2013 - 21.06.2015</h6>
-					<h6><b><a href="#">More... </a></b></h6>
-				</div>
-
-				<div class="col-md-1">
-					<div class="btn-group">
-						<a class="btn dropdown-toggle btn-default blue" data-toggle="dropdown" href="#">
-							<span class="icon-cog icon-white"></span><span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-							<li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

@@ -7,9 +7,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Portfolio\PortfolioBundle\Entity\Article;
 use Portfolio\PortfolioBundle\Entity\Image;
 use Portfolio\PortfolioBundle\Entity\Comment;
+use Portfolio\PortfolioBundle\Entity\Study;
 use Portfolio\PortfolioBundle\Form\ArticleType;
 use Portfolio\PortfolioBundle\Form\ImageType;
+use Portfolio\PortfolioBundle\Form\StudyType;
 use Portfolio\UserBundle\Entity\User;
+
 
 class PortfolioController extends Controller
 {
@@ -41,7 +44,7 @@ class PortfolioController extends Controller
 						->getManager()
 						->getRepository('PortfolioUserBundle:User');
 
-		$listeusers = $repository->findBy(array());
+		$listeusers = $repository->findBy(array(), array('id' => 'ASC'));
  
 		foreach($listeusers as $user)
 		{
@@ -63,7 +66,7 @@ class PortfolioController extends Controller
 							->getManager()
 							->getRepository('PortfolioUserBundle:User');
 							
-							
+				
 		$user = $repository->find($id);	
 		if($user === null)
 		{
@@ -75,7 +78,58 @@ class PortfolioController extends Controller
 		));
 	}
 	public function studiesAction(){
-		return $this->render('PortfolioPortfolioBundle:Portfolio:studies.html.twig', array("active" => "studies"));
+		$array_studies = array();
+		$repository = $this->getDoctrine()
+						->getManager()
+						->getRepository('PortfolioPortfolioBundle:study');
+						
+		$study = new Study();
+		$form = $this->createForm(new StudyType, $study);
+		
+		$request = $this->get('request');
+		if ($request->getMethod() == 'POST') {
+			$form->bind($request);
+			if ($form->isValid()) {
+				$em = $this->getDoctrine()->getManager();
+				$em->persist($study);
+				$em->flush();
+			}
+		}
+
+		$listeStudies = $repository->findBy(array(), array('id' => 'DESC'));
+ 
+		foreach($listeStudies as $study)
+		{
+		  // $study est une instance de study
+		  $array_study = array(
+			"id" => $study->getId(),
+			"title" => $study->getTitle(),
+			"enterprise" => $study->getEnterprise(),
+			"dates" => $study->getDates(),
+			"link" => $study->getLink()
+			);
+			array_push($array_studies, $array_study);
+		}
+		
+		return $this->render('PortfolioPortfolioBundle:Portfolio:studies.html.twig', array('studies' => $array_studies, "active" => "studies", 'form' => $form->createView()));
+	}
+	public function removeStudyAction($id)
+	{
+		$repository = $this->getDoctrine()
+							->getManager()
+							->getRepository('PortfolioPortfolioBundle:Study');
+							
+							
+		$study = $repository->find($id);	
+		if($study === null)
+		{
+			throw $this->createNotFoundException('Study[id='.$id.'] inexistant.');
+		}
+		
+		$em = $this->getDoctrine()->getManager();
+		$em->remove($study);
+		$em->flush();
+		return $this->redirect($this->generateUrl('Studies'));
 	}
 	public function chatAction(){
 		return $this->render('PortfolioPortfolioBundle:Portfolio:chat.html.twig', array("active" => "chat"));

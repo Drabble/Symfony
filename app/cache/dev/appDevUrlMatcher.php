@@ -244,9 +244,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'getComments')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::getCommentsAction',));
         }
 
-        // removeArticle
-        if (0 === strpos($pathinfo, '/removeArticle') && preg_match('#^/removeArticle/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeArticle')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::removeArticleAction',));
+        if (0 === strpos($pathinfo, '/remove')) {
+            // removeArticle
+            if (0 === strpos($pathinfo, '/removeArticle') && preg_match('#^/removeArticle/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeArticle')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::removeArticleAction',));
+            }
+
+            // removeStudy
+            if (0 === strpos($pathinfo, '/removeStudy') && preg_match('#^/removeStudy/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'removeStudy')), array (  '_controller' => 'Portfolio\\PortfolioBundle\\Controller\\PortfolioController::removeStudyAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

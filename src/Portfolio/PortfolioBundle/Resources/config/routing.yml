@@ -40,3 +40,6 @@ getComments:
 removeArticle:
     path:     /removeArticle/{id}
     defaults: { _controller: PortfolioPortfolioBundle:Portfolio:removeArticle }
+removeStudy:
+    path:     /removeStudy/{id}
+    defaults: { _controller: PortfolioPortfolioBundle:Portfolio:removeStudy }
